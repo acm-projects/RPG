@@ -80,6 +80,7 @@ RPG is a game with endless maps to explore and enemies to slice through. Through
 - Victory screen, then back to the start screen
 
 #### Week 8:
+- animation timing, impact on hit, cool “juice” things
 - begin working on presentation
 
 #### Week 9:
@@ -110,5 +111,8 @@ Some basic ones:
 | git pull origin "branch" | Pull updates from a specific branch | 
 
 # Developers
-- TBD
+- Aendri Singh
+- Faizaan Siddiqui
+- Jose Garcia
+- Lana Barakat
 
