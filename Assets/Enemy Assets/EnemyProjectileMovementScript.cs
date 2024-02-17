@@ -37,7 +37,7 @@ public class EnemyProjectileMovementScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")) { //if hit player
             Destroy(gameObject);
-
+            other.GetComponent<playerTempScript>().takeDamage(5);
         } 
 
     }

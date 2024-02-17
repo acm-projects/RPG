@@ -10,8 +10,9 @@ public class DefaultEnemyScript : MonoBehaviour
     public Animator animator;
     
     public float projectileInterval = 1;
-    public int enemyRange = 7;
-    public int chaseSpeed = 2;
+    public int enemyPursuingRange = 12;
+    public int enemyAttackRange = 8;
+    public float chaseSpeed = 2;
     
     private float timer = 0;
     private float distance = 5;
@@ -31,17 +32,21 @@ public class DefaultEnemyScript : MonoBehaviour
 
         transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
 
-        if (distance < enemyRange && timer > projectileInterval)
+         if (distance < enemyPursuingRange)
         {
-            animator.SetBool("isAttacking", true);
-            timer = 0;
-            shoot();
-        } else if (distance > enemyRange) {
-            animator.SetBool("isAttacking", false);
+            animator.SetBool("isPursuing", true);
+            if (timer > projectileInterval && distance < enemyAttackRange) {
+                timer = 0;
+                shoot();
+            }
+            
+        } else {
+            animator.SetBool("isPursuing", false);
         }
     }
 
     public void shoot() {
+        animator.SetTrigger("isAttacking");
         Instantiate(projectile, projectilePos.position, Quaternion.identity);
     }
 }
