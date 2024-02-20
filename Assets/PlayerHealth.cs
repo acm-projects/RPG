@@ -21,11 +21,21 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(20);
         }
+
     }
 
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
+    }
+
+    public void Heal(int amount) {
+        // Increase currentHealth by amount
+        currentHealth += amount;
+        // Clamp current health to ensure it doesn't exceed max health
+        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        // Update health bar UI
         healthBar.SetHealth(currentHealth);
     }
 }
