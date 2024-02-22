@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 C:\Users\zestyxace\RPG
-=======
-C:\Users\argue\RPG
->>>>>>> 5754fe628f74d8329a9c69ec831db05d39897fd3
