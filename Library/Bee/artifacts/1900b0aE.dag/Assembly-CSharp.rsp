@@ -378,9 +378,14 @@
 "Assets/Enemies/EnemyMeleeScript.cs"
 "Assets/Enemies/EnemyProjectileMovementScript.cs"
 "Assets/HealthBar.cs"
+<<<<<<< HEAD
+"Assets/PlayerHealth.cs"
+"Assets/PlayerMovement.cs"
+=======
 "Assets/Interfaces/IDamageable.cs"
 "Assets/playerTemp/PlayerHealth.cs"
 "Assets/playerTemp/playerTempScript.cs"
+>>>>>>> main
 -langversion:9.0
 
 /deterministic
