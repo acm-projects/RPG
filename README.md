@@ -16,6 +16,9 @@ RPG is a game with endless maps to explore and enemies to slice through. Through
 # Stretch Goals
 
 - More variety of everything- enemies, bosses, maps, tiles, skills, weapons
+- More custom art
+- Audio (music, sound effects)
+- Shaders (skill effects, lighting)
 - Cut scenes
 - Multiplayer
 
@@ -110,9 +113,15 @@ Some basic ones:
 | git push origin "branch" | Push to branch |
 | git pull origin "branch" | Pull updates from a specific branch | 
 
-# Developers
+# Game Developers
 - Aendri Singh
 - Faizaan Siddiqui
 - Jose Garcia
 - Lana Barakat
+
+# Project Manager
+- Kacie Yee
+
+# Industry Mentor
+- Jon Perry
 
