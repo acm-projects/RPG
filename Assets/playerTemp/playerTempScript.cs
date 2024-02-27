@@ -49,4 +49,14 @@ public class playerTempScript : MonoBehaviour
     public void takeDamage(int hpLoss) {
         playerHealth.TakeDamage(hpLoss); //reduces HP
     }
+
+    private void OnTriggerEnter2D(Collider2D other) {
+        // Check if player collides with HealingPotion
+        if (other.CompareTag("HealingPotion")) {
+            // call Heal method from PlayerHealth script
+            playerHealth.Heal(20);
+            // Destroy HealingPotion
+            Destroy(other.gameObject);
+        }
+    }
 }

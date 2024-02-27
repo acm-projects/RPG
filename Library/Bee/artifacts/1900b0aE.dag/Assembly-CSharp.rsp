@@ -380,11 +380,12 @@
 "Assets/Enemies/EnemyAbstract.cs"
 "Assets/Enemies/EnemyMeleeScript.cs"
 "Assets/Enemies/EnemyProjectileMovementScript.cs"
-"Assets/HealthBar.cs"
+"Assets/Health/HealthScripts/HealthBar.cs"
 "Assets/Interfaces/IDamageable.cs"
 "Assets/PlayerMovement.cs"
 "Assets/playerTemp/PlayerHealth.cs"
 "Assets/playerTemp/playerTempScript.cs"
+"Assets/Skills/SkillScripts/abilityCooldown.cs"
 -langversion:9.0
 
 /deterministic
