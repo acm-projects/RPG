@@ -9,25 +9,29 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     
     public HealthBar healthBar;
+    public Text healthText;
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
+        UpdateHealthText();
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             TakeDamage(20);
-        }
+        }*/
 
     }
 
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        currentHealth = Mathf.Max(currentHealth, 0);
         healthBar.SetHealth(currentHealth);
+        UpdateHealthText();
     }
 
     public void Heal(int amount) {
@@ -37,5 +41,10 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         // Update health bar UI
         healthBar.SetHealth(currentHealth);
+        UpdateHealthText();
+    }
+
+    void UpdateHealthText() {
+        healthText.text = currentHealth + " / " + maxHealth;
     }
 }
