@@ -10,16 +10,21 @@ public class RangedEnemyTest : EnemyAbstract
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        DefaultMovement();
     }
 
-    protected override void Attack() {
+    protected override void AttackingAction() {
         animator.SetTrigger("isAttacking");
         Instantiate(projectile, projectilePos.position, Quaternion.identity);
         projectile.GetComponent<EnemyProjectileMovementScript>().projectileDamage = attackDamage;  
     }
 
-    protected override void PursuingAction(bool state) {
-        animator.SetBool("isPursuing", state);
+    protected override void PursuingAction() {
+        animator.SetBool("isPursuing", true);
+        DefaultPursuingAction();
+    }
+
+    protected override void IdleAction () {
+        animator.SetBool("isPursuing", false);
     }
 }

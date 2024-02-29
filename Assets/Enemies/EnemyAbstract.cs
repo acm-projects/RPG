@@ -16,9 +16,6 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
     public float attackInterval;
     public float attackMovementDelay;
     public int attackDamage;
-
-    //public float knockbackForce;
-    //public float knockbackTime;
     
     public int enemyPursuingRange;
     public int enemyAttackRange;
@@ -34,10 +31,23 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
         currentHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
     }
+    public void DefaultMovement() {
+        float distance = Vector2.Distance(transform.position, player.transform.position); //distance from player
+        direction = player.transform.position - transform.position; //direction 
 
-    public void Movement() {
-        float distance = Vector2.Distance(transform.position, player.transform.position);
-        direction = player.transform.position - transform.position; 
+        if (distance < enemyPursuingRange) { //if in PURSING range of character
+            PursuingAction();
+
+            timerAttackInterval += Time.deltaTime;
+            timerAttackDelay -= Time.deltaTime;
+            if (timerAttackInterval > attackInterval && distance < enemyAttackRange) { //if can attack + in range
+                timerAttackInterval = 0;
+                timerAttackDelay = attackMovementDelay;
+                AttackingAction();
+            }
+        } else {
+            IdleAction();
+        }
 
         //face correct direction (LEFT and RIGHT)
         if (direction.x > 0 && !facingRight) {
@@ -51,26 +61,8 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
             transform.localScale = tempScale;
             facingRight = false;
         }
-
-        if (timerAttackDelay <= 0) //if not attacking, move
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
-
-        if (distance < enemyPursuingRange) //if in range of character
-        {
-            timerAttackInterval += Time.deltaTime;
-            timerAttackDelay -= Time.deltaTime;
-            PursuingAction(true);
-            if (timerAttackInterval > attackInterval && distance < enemyAttackRange) { //if can attack + in range
-                timerAttackInterval = 0;
-                timerAttackDelay = attackMovementDelay;
-                Attack();
-            }
-        } else {
-            timerAttackDelay = 0;
-            PursuingAction(false);
-        }
     }
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,8 +78,16 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
         currentHealth -= damage; 
     }
 
+    // Health setter and getter
     public int Health { get { return currentHealth; } set {currentHealth = value; }}
 
-    protected abstract void Attack();
-    protected abstract void PursuingAction(bool state);
+    // default moving after player pursue
+    public void DefaultPursuingAction() {
+        if (timerAttackDelay <= 0) //if not attacking, move
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
+    }
+
+    protected abstract void IdleAction();
+    protected abstract void AttackingAction();
+    protected abstract void PursuingAction();
 }
