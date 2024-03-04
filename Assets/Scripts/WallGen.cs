@@ -25,13 +25,18 @@ public class WallGen
             foreach (var direction in directionList)
             {
                 var neighbourPosition = position + direction;
-                if (floorPositions.Contains(neighbourPosition) == false && floorPositions.Contains(neighbourPosition + direction) == false)
+                if (floorPositions.Contains(neighbourPosition) == false)
                     wallPositions.Add(neighbourPosition);
-                else
-                    tilemapVisualizer.PaintSingleFloorTile(neighbourPosition);
-                //logic for covering empty spots with floor instead of wall
 
-                //TODO FIX THIS LOGIC, BECAUSE HOLE GAP COULD BE MORE THAN 3 OR SOMETHING
+                // //OLD METHOD
+
+                // //TODO FIX THIS LOGIC, BECAUSE HOLE GAP COULD BE MORE THAN 3 OR SOMETHING
+
+                // var neighbourPosition = position + direction;
+                // if (floorPositions.Contains(neighbourPosition) == false && floorPositions.Contains(neighbourPosition + direction) == false)
+                //     wallPositions.Add(neighbourPosition);
+                // else
+                //     tilemapVisualizer.PaintSingleFloorTile(neighbourPosition);
             }
         }
         return wallPositions;

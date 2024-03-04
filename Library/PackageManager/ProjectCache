@@ -732,6 +732,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.6
     - 3.2.0-pre.7
     - 3.2.0-pre.8
+    - 3.2.0-pre.9
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     compatible:
@@ -746,6 +747,7 @@ m_ResolvedPackages:
     - 3.2.0-pre.6
     - 3.2.0-pre.7
     - 3.2.0-pre.8
+    - 3.2.0-pre.9
     - 4.0.0-pre.1
     - 4.0.0-pre.2
     recommended: 3.0.8
@@ -3240,6 +3242,7 @@ m_ResolvedPackages:
     - 10.0.2
     - 10.0.3
     - 10.1.0
+    - 10.1.1
     compatible:
     - 9.1.0
     recommended: 9.1.0
@@ -3490,6 +3493,7 @@ m_ResolvedPackages:
     - 9.0.0-pre.2
     - 9.0.0
     - 9.0.1
+    - 9.0.2
     compatible:
     - 8.0.4
     recommended: 8.0.4
@@ -3720,6 +3724,7 @@ m_ResolvedPackages:
     - 10.0.0
     - 10.0.1
     - 10.0.2
+    - 10.0.3
     compatible:
     - 9.0.2
     recommended: 9.0.2
@@ -4154,6 +4159,7 @@ m_ResolvedPackages:
     - 9.0.1
     - 9.0.2
     - 9.0.3
+    - 9.0.4
     compatible:
     - 8.0.2
     recommended: 8.0.2
