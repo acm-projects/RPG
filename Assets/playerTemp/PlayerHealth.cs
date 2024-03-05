@@ -10,6 +10,7 @@ public class PlayerHealth : MonoBehaviour
     
     public HealthBar healthBar;
     public Text healthText;
+    public GameStateManager gameStateManager;
     void Start()
     {
         currentHealth = maxHealth;
@@ -23,6 +24,11 @@ public class PlayerHealth : MonoBehaviour
         {
             TakeDamage(20);
         }*/
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
 
     }
 
@@ -46,5 +52,10 @@ public class PlayerHealth : MonoBehaviour
 
     void UpdateHealthText() {
         healthText.text = currentHealth + " / " + maxHealth;
+    }
+
+    void Die()
+    {
+        gameStateManager.GameOver();
     }
 }

@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject gameOverUI;
 
     //Checks if player presses ESCAPE to pause/unpause game
     void Update() {
@@ -38,5 +40,13 @@ public class GameStateManager : MonoBehaviour
 
     public void Help () {
         Debug.Log ("Opened Help...");
+    }
+
+    public void RestartScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void GameOver() {
+        gameOverUI.SetActive(true);
+        //Time.timeScale = 0f;
     }
 }

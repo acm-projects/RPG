@@ -381,6 +381,7 @@
 "Assets/Enemies/EnemyMeleeScript.cs"
 "Assets/Enemies/EnemyProjectileMovementScript.cs"
 "Assets/Enemies/RangedEnemyTest.cs"
+"Assets/gameOverScreen.cs"
 "Assets/General Scripts/GameStateManager.cs"
 "Assets/General Scripts/IDamageable.cs"
 "Assets/Health/HealthScripts/HealthBar.cs"
