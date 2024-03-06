@@ -13,7 +13,12 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
     private int offset = 1; //making the offset as naturally the BPS algo will make it so that the rooms might collide 
     [SerializeField]
     private bool randomWalkRooms = false; //checking if it is gonna be square rooms or random shaped ones
+    [SerializeField]
+    private GameObject startSquare;
+    [SerializeField]
+    private GameObject endSquare;
 
+    Vector2Int startPos, endPos;
 
     protected override void RunProceduralGeneration()
     {
@@ -32,18 +37,30 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
         else
             floor = CreateSimpleRooms(roomsList);
 
+        Debug.Log(floor.Count);
+        foreach (Vector2Int position in floor)
+        {
+            //Debug.Log($"Position: ({position.x}, {position.y})");
+        }
+
         //need to know the center of each room to connect em 
         //put all the centers in a list -> choose a random center point -> find the nearest point and connect the two centers -> delete points from list -> continue until all rooms are connected
         //this way it isn't all over the place, instead there is a linear path and a clear start and end room
         List<Vector2Int> roomCenters = new List<Vector2Int>();
         foreach (var room in roomsList)
+        {
             roomCenters.Add((Vector2Int)Vector3Int.RoundToInt(room.center));
+            //Debug.Log(room); // Print each room (you can customize this line)
+        }
 
         HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
         floor.UnionWith(corridors);
 
         tilemapVisualizer.PaintFloorTiles(floor);
         WallGen.CreateWalls(floor, tilemapVisualizer);
+
+        startSquare.transform.position = new Vector3(startPos.x, startPos.y, 10);
+        endSquare.transform.position = new Vector3(endPos.x, endPos.y, 10);
     }
 
     private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)
@@ -58,6 +75,13 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
             foreach (var position in roomFloor)
                 if (position.x >= (roomBounds.xMin + offset) && position.x <= (roomBounds.xMax - offset) && position.y >= (roomBounds.yMin - offset) && position.y <= (roomBounds.yMax - offset))
                     floor.Add(position);
+
+            if (i == 0)
+                //Debug.Log(roomCenter);
+                startPos = roomCenter;
+            if (i == roomsList.Count - 1)
+                //Debug.Log(roomCenter);
+                endPos = roomCenter;
         }
         return floor;
     }

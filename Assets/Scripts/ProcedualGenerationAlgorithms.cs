@@ -52,6 +52,7 @@ public static class ProceduralGenerationAlgorithms
         Queue<BoundsInt> roomsQueue = new Queue<BoundsInt>(); //FIFO 😎
         List<BoundsInt> roomsList = new List<BoundsInt>();
         roomsQueue.Enqueue(spaceToSplit);
+        //Debug.Log("Rooms: " + roomsQueue.Count);
         while (roomsQueue.Count > 0)
         {
             var room = roomsQueue.Dequeue();

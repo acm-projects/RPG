@@ -382,6 +382,7 @@
 "Assets/Scripts/SimpleRandomWalkDungeonGen.cs"
 "Assets/Scripts/TilemapVisualizer.cs"
 "Assets/Scripts/WallGen.cs"
+"Assets/Scripts/WallTypesHelper.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
