@@ -6,6 +6,11 @@ public class GameStateManager : MonoBehaviour
 {
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    public GameObject settingsMenuUI;
+    public GameObject helpMenuUI;
+    public GameObject playerHPBar;
+
+    //private GameObject helpMenuUI;
 
     //Checks if player presses ESCAPE to pause/unpause game
     void Update() {
@@ -20,11 +25,14 @@ public class GameStateManager : MonoBehaviour
 
     public void Pause() {
         pauseMenuUI.SetActive(true);
+        playerHPBar.SetActive(false);
         Time.timeScale = 0f;
     }
 
     public void Resume() {
         pauseMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(false);
+        playerHPBar.SetActive(true);
         Time.timeScale = 1;
     }
 
@@ -34,9 +42,17 @@ public class GameStateManager : MonoBehaviour
 
     public void Settings () {
         Debug.Log ("Opened Settings...");
+        settingsMenuUI.SetActive(true);
     }
 
+    public void SettingsExit () {
+        settingsMenuUI.SetActive(false);
+    }
     public void Help () {
         Debug.Log ("Opened Help...");
+        helpMenuUI.SetActive(true);
+    }
+    public void HelpExit () {
+        helpMenuUI.SetActive(false);
     }
 }

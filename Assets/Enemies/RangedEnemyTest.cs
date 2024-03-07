@@ -12,6 +12,7 @@ public class RangedEnemyTest : EnemyAbstract
     {
         DefaultMovement();
     }
+    
 
     protected override void AttackingAction() {
         animator.SetTrigger("isAttacking");

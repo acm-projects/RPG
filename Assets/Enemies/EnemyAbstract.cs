@@ -13,19 +13,26 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
     public Rigidbody2D rb;
     GameObject player;
 
+    //Attack stats
     public float attackInterval;
     public float attackMovementDelay;
     public int attackDamage;
+
+    //Player knockback stats
+    public float knockbackForce;
+    public float knockbackTime;
     
+    //Movement behavior
     public int enemyPursuingRange;
     public int enemyAttackRange;
     public float chaseSpeed;
     
+    //Timers
     float timerAttackInterval = 0;
     float timerAttackDelay = 0;
     Vector2 direction;
 
-    bool facingRight = false; 
+    bool facingRight = true; 
 
     public void InitializeEnemy () {
         currentHealth = maxHealth;
@@ -85,6 +92,19 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
     public void DefaultPursuingAction() {
         if (timerAttackDelay <= 0) //if not attacking, move
             transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, chaseSpeed * Time.deltaTime);
+    }
+
+    // default ranged attack behavior
+    public void DefaultRangedAttack(GameObject projectile, Transform projectilePos) {
+        Instantiate(projectile, projectilePos.position, Quaternion.identity);
+        projectile.GetComponent<EnemyProjectileMovementScript>().projectileDamage = attackDamage;
+    }
+
+    // default melee attack behavior
+    public void DefaultMeleeAttack(Collider2D attackPoint) {
+        if (attackPoint.IsTouching(player.GetComponent<Collider2D>())) { //if attack hits player
+            StartCoroutine(player.GetComponent<playerTempScript>().takeDamage(attackDamage, direction.normalized * knockbackForce, knockbackTime));
+        }
     }
 
     protected abstract void IdleAction();

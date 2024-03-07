@@ -6,8 +6,10 @@ public class playerTempScript : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public Rigidbody2D rb; 
+    public Animator animator;
     private Vector2 movement; 
     //public int health = 100;
+    bool facingRight = true; 
 
     public PlayerHealth playerHealth;
 
@@ -26,6 +28,23 @@ public class playerTempScript : MonoBehaviour
         //move character
         rb.transform.Translate(Vector2.up *Time.deltaTime * movement.y * moveSpeed);
         rb.transform.Translate(Vector2.right *Time.deltaTime * movement.x * moveSpeed);
+
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Speed", movement.sqrMagnitude);
+
+        //face correct direction (LEFT and RIGHT)
+        if (movement.x > 0 && !facingRight) {
+            Vector3 tempScale = transform.localScale;
+            tempScale.x *= -1;
+            transform.localScale = tempScale;
+            facingRight = true;
+        } else if (movement.x < 0 && facingRight) {
+            Vector3 tempScale = transform.localScale;
+            tempScale.x *= -1;
+            transform.localScale = tempScale;
+            facingRight = false;
+        }
     }
 
     /* Reduces MC health by given amount WITH knockback
@@ -49,6 +68,7 @@ public class playerTempScript : MonoBehaviour
     public void takeDamage(int hpLoss) {
         playerHealth.TakeDamage(hpLoss); //reduces HP
     }
+
 
     private void OnTriggerEnter2D(Collider2D other) {
         // Check if player collides with HealingPotion
