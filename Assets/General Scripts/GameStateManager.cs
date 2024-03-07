@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class GameStateManager : MonoBehaviour
     public GameObject playerHPBar;
 
     //private GameObject helpMenuUI;
+    public GameObject gameOverUI;
 
     //Checks if player presses ESCAPE to pause/unpause game
     void Update() {
@@ -54,5 +56,13 @@ public class GameStateManager : MonoBehaviour
     }
     public void HelpExit () {
         helpMenuUI.SetActive(false);
+    }
+
+    public void RestartScene() {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+    public void GameOver() {
+        gameOverUI.SetActive(true);
+        //Time.timeScale = 0f;
     }
 }
