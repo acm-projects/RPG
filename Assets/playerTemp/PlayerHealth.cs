@@ -15,7 +15,7 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
-        //UpdateHealthText();
+        UpdateHealthText();
     }
 
     void Update()
@@ -37,7 +37,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= damage;
         currentHealth = Mathf.Max(currentHealth, 0);
         healthBar.SetHealth(currentHealth);
-        //UpdateHealthText();
+        UpdateHealthText();
     }
 
     public void Heal(int amount) {
@@ -47,12 +47,12 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
         // Update health bar UI
         healthBar.SetHealth(currentHealth);
-        //UpdateHealthText();
+        UpdateHealthText();
     }
 
-    /*void UpdateHealthText() {
+    void UpdateHealthText() {
         healthText.text = currentHealth + " / " + maxHealth;
-    }*/
+    }
 
     void Die()
     {
