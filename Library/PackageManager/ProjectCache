@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638453775766612068
+      ticks: 638455399844373045
     m_Hash: 3104217734
   m_LockFileStatus:
     m_FilePath: C:/Users/argue/RPG/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638453775766647117
+      ticks: 638455399844373045
     m_Hash: 295145596
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
