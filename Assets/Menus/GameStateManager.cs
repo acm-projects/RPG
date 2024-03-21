@@ -10,9 +10,18 @@ public class GameStateManager : MonoBehaviour
     public GameObject settingsMenuUI;
     public GameObject helpMenuUI;
     public GameObject playerHPBar;
-
-    //private GameObject helpMenuUI;
+    public GameObject skillsUI;
     public GameObject gameOverUI;
+
+
+    
+    void Start () {
+        Time.timeScale = 1;
+
+        gameOverUI.SetActive(false);
+        MenuItems(false);
+        GameItems(true);
+    }
 
     //Checks if player presses ESCAPE to pause/unpause game
     void Update() {
@@ -27,42 +36,57 @@ public class GameStateManager : MonoBehaviour
 
     public void Pause() {
         pauseMenuUI.SetActive(true);
-        playerHPBar.SetActive(false);
+
+        GameItems(false);
         Time.timeScale = 0f;
     }
 
     public void Resume() {
-        pauseMenuUI.SetActive(false);
-        settingsMenuUI.SetActive(false);
-        playerHPBar.SetActive(true);
+        MenuItems(false);
+        GameItems(true);
+
         Time.timeScale = 1;
     }
 
     public void LoadMenu () {
         Debug.Log ("Switched to Main Menu...");
+        SceneManager.LoadScene(0); //goes to main menu
+        gameIsPaused = false;
+        Time.timeScale = 1;
     }
 
-    public void Settings () {
-        Debug.Log ("Opened Settings...");
-        settingsMenuUI.SetActive(true);
+    // Open and Closes Settings Menu
+    public void Settings (bool flag) {
+        settingsMenuUI.SetActive(flag);
     }
 
-    public void SettingsExit () {
-        settingsMenuUI.SetActive(false);
-    }
-    public void Help () {
-        Debug.Log ("Opened Help...");
-        helpMenuUI.SetActive(true);
-    }
-    public void HelpExit () {
-        helpMenuUI.SetActive(false);
+    // Open and Closes Help Menu
+    public void Help (bool flag) {
+        helpMenuUI.SetActive(flag);
     }
 
+    // Resets current level
     public void RestartScene() {
+        gameIsPaused = false;
+        Time.timeScale = 1;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    // Activates Game Over screen
     public void GameOver() {
+        gameIsPaused = true;
         gameOverUI.SetActive(true);
-        //Time.timeScale = 0f;
+        GameItems(false);
+        Time.timeScale = 0f;
+    }
+
+    private void MenuItems(bool flag) {
+        pauseMenuUI.SetActive(flag);
+        settingsMenuUI.SetActive(flag);
+        helpMenuUI.SetActive(flag);
+    }
+    private void GameItems(bool flag) {
+        playerHPBar.SetActive(flag);
+        skillsUI.SetActive(flag);
     }
 }
