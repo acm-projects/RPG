@@ -80,13 +80,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 1903989118691897977, guid: a6c6b4611a6a99f449927dfd81b617c5, type: 3}
-  player: {fileID: 0}
   projectilePos: {fileID: 5231492895835993093}
   animator: {fileID: 4223667008178340202}
   projectileInterval: 1
   enemyPursuingRange: 12
   enemyAttackRange: 8
   chaseSpeed: 1
+  attackDamage: 5
 --- !u!212 &7302291207953994862
 SpriteRenderer:
   m_ObjectHideFlags: 0
