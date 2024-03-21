@@ -43,6 +43,7 @@ public static class ProceduralGenerationAlgorithms
     }
 
     //how it works:
+    //BoundsInt(location, size)
     //the spaceToSplit (BountsInt) is basically a rectangle where spacetoSplit.size.x returns width, spacetoSplit.size.y returns height, spacetoSplit.min returns bottom left 
     //to start we split spacetoSplit vertically into 2, choosing any point between the beginning and end 
     //it is not neccessarily split down the middle, just anywhere in the middle, but you have double the rooms after the split 
@@ -52,7 +53,7 @@ public static class ProceduralGenerationAlgorithms
         Queue<BoundsInt> roomsQueue = new Queue<BoundsInt>(); //FIFO 😎
         List<BoundsInt> roomsList = new List<BoundsInt>();
         roomsQueue.Enqueue(spaceToSplit);
-        //Debug.Log("Rooms: " + roomsQueue.Count);
+        Debug.Log("Rooms: " + roomsQueue.Count + ". " + spaceToSplit);
         while (roomsQueue.Count > 0)
         {
             var room = roomsQueue.Dequeue();

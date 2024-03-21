@@ -71,8 +71,6 @@ public class WallGen
 
                 // //OLD METHOD
 
-                // //TODO FIX THIS LOGIC, BECAUSE HOLE GAP COULD BE MORE THAN 3 OR SOMETHING
-
                 // var neighbourPosition = position + direction;
                 // if (floorPositions.Contains(neighbourPosition) == false && floorPositions.Contains(neighbourPosition + direction) == false)
                 //     wallPositions.Add(neighbourPosition);

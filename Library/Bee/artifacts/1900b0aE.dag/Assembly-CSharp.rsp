@@ -379,6 +379,7 @@
 "Assets/Scripts/Data/SimpleRandomWalkSO.cs"
 "Assets/Scripts/ProcedualGenerationAlgorithms.cs"
 "Assets/Scripts/RoomFirstDungeonGen.cs"
+"Assets/Scripts/RunTest.cs"
 "Assets/Scripts/SimpleRandomWalkDungeonGen.cs"
 "Assets/Scripts/TilemapVisualizer.cs"
 "Assets/Scripts/WallGen.cs"

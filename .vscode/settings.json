@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "RPG.sln"
+    "dotnet.defaultSolution": "RPG.sln",
+    "git.ignoreLimitWarning": true
 }

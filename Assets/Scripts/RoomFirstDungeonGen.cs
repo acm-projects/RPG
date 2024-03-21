@@ -19,7 +19,10 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
     private GameObject endSquare;
 
     Vector2Int startPos, endPos;
-
+    public void RunGeneration()
+    {
+        RunProceduralGeneration();
+    }
     protected override void RunProceduralGeneration()
     {
         CreateRooms();
@@ -38,10 +41,10 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
             floor = CreateSimpleRooms(roomsList);
 
         Debug.Log(floor.Count);
-        foreach (Vector2Int position in floor)
-        {
-            //Debug.Log($"Position: ({position.x}, {position.y})");
-        }
+        // foreach (Vector2Int position in floor)
+        // {
+        //     Debug.Log($"Position: ({position.x}, {position.y})");
+        // }
 
         //need to know the center of each room to connect em 
         //put all the centers in a list -> choose a random center point -> find the nearest point and connect the two centers -> delete points from list -> continue until all rooms are connected
