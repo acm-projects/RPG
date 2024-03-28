@@ -12,6 +12,9 @@ public class GameStateManager : MonoBehaviour
     public GameObject playerHPBar;
     public GameObject skillsUI;
     public GameObject gameOverUI;
+    public GameObject pauseButton;
+
+    public GameObject[] skillInfoMenus;
 
 
     
@@ -72,6 +75,10 @@ public class GameStateManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void OpenSkillInfo (int skill) {
+        skillInfoMenus[skill].SetActive(true);
+    }
+
     // Activates Game Over screen
     public void GameOver() {
         gameIsPaused = true;
@@ -84,9 +91,15 @@ public class GameStateManager : MonoBehaviour
         pauseMenuUI.SetActive(flag);
         settingsMenuUI.SetActive(flag);
         helpMenuUI.SetActive(flag);
+        for (int i = 0; i < skillInfoMenus.Length; i++) {
+            skillInfoMenus[i].SetActive(flag);
+        }
     }
     private void GameItems(bool flag) {
         playerHPBar.SetActive(flag);
         skillsUI.SetActive(flag);
+        pauseButton.SetActive(flag);
     }
+
+
 }
