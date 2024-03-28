@@ -17,10 +17,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            TakeDamage(20);
-        }
+        // if (Input.GetKeyDown(KeyCode.Space))
+        // {
+        //     TakeDamage(20);
+        // }
 
     }
 
@@ -28,6 +28,11 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+
+        if (currentHealth <= 0) {
+            // Stop scene
+            Time.timeScale = 0;
+        }
     }
 
     public void Heal(int amount) {

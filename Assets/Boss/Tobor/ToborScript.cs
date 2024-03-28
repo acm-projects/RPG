@@ -4,22 +4,65 @@ using UnityEngine;
 
 public class ToborScript : MonoBehaviour
 {
-    public GameObject player;
+    public string playerTag = "Player";
     public float speed;
-
+    private Animator animator;
     private float distance;
+    private GameObject playerObject;
+    public int damageAmount = 10;
+
     void Start()
     {
-        
+        animator = GetComponent<Animator>();
+        playerObject = GameObject.FindWithTag(playerTag);
     }
 
-    // Update is called once per frame
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
+        MoveTowardsPlayer();
+        UpdateAnimation();
+    }
 
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);    
+    void MoveTowardsPlayer()
+    {
+        if (playerObject != null)
+        {
+            distance = Vector2.Distance(playerObject.transform.position, transform.position);
+            Vector2 direction = playerObject.transform.position - transform.position;
+            transform.position = Vector2.MoveTowards(transform.position, playerObject.transform.position, speed * Time.deltaTime);
+        }
+    }
 
+    void UpdateAnimation()
+    {
+        if (playerObject != null)
+        {
+            Vector2 direction = (playerObject.transform.position - transform.position).normalized;
+            float horizontalInput = direction.x;
+            float verticalInput = direction.y;
+
+            if (Mathf.Abs(horizontalInput) > Mathf.Abs(verticalInput))
+            {
+                animator.SetFloat("Horizontal", horizontalInput);
+                animator.SetFloat("Vertical", 0);
+            }
+            else
+            {
+                animator.SetFloat("Horizontal", 0);
+                animator.SetFloat("Vertical", verticalInput);
+            }
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag(playerTag))
+        {
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.TakeDamage(damageAmount);
+            }
+        }
     }
 }
