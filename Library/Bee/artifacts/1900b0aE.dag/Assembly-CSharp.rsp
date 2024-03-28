@@ -374,6 +374,16 @@
 "Assets/playerTemp/PlayerHealth.cs"
 "Assets/playerTemp/PlayerMovement.cs"
 "Assets/playerTemp/playerTempScript.cs"
+"Assets/Scripts/AbstractDungeonGen.cs"
+"Assets/Scripts/CorridorFirstDungeonGen.cs"
+"Assets/Scripts/Data/SimpleRandomWalkSO.cs"
+"Assets/Scripts/ProcedualGenerationAlgorithms.cs"
+"Assets/Scripts/ProGen/RoomFirstDungeonGen.cs"
+"Assets/Scripts/ProGen/TilemapVisualizer.cs"
+"Assets/Scripts/RunTest.cs"
+"Assets/Scripts/SimpleRandomWalkDungeonGen.cs"
+"Assets/Scripts/WallGen.cs"
+"Assets/Scripts/WallTypesHelper.cs"
 "Assets/Skills/SkillScripts/abilityCooldown.cs"
 -langversion:9.0
 

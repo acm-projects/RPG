@@ -2961,10 +2961,12 @@ m_ResolvedPackages:
     - 1.0.1
     - 1.1.0
     - 1.1.1
+    - 1.1.2
     compatible:
     - 1.1.0
     - 1.1.1
-    recommended: 1.1.1
+    - 1.1.2
+    recommended: 1.1.2
     deprecated: []
   dependencies:
   - name: com.unity.2d.sprite
@@ -3392,6 +3394,7 @@ m_ResolvedPackages:
     - 2.4.0-exp.2
     - 2.4.0-pre.2
     - 2.4.0-pre.5
+    - 2.4.0
     compatible:
     - 1.2.4
     - 1.3.1
@@ -3411,6 +3414,7 @@ m_ResolvedPackages:
     - 2.4.0-exp.2
     - 2.4.0-pre.2
     - 2.4.0-pre.5
+    - 2.4.0
     recommended: 1.2.4
     deprecated: []
   dependencies:
@@ -3609,9 +3613,11 @@ m_ResolvedPackages:
     - 1.8.10
     - 1.8.11
     - 1.8.12
+    - 1.8.13
     compatible:
     - 1.8.12
-    recommended: 1.8.12
+    - 1.8.13
+    recommended: 1.8.13
     deprecated: []
   dependencies:
   - name: com.unity.mathematics
