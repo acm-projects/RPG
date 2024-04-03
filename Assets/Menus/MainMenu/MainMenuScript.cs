@@ -10,34 +10,40 @@ public class MainMenuScript : MonoBehaviour
     public GameObject settingsMenuUI;
     public GameObject helpMenuUI;
 
-    
-    void Start () {
+    void Start()
+    {
         Time.timeScale = 1; //starts time 
     }
 
-    public void StartGame () {
-       SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1); //gets next active scene
+    public void StartGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //gets next active scene
     }
 
-    public void Settings () {
-        Debug.Log ("Opened Settings...");
+    public void Settings()
+    {
+        Debug.Log("Opened Settings...");
         settingsMenuUI.SetActive(true);
     }
 
-    public void SettingsExit () {
+    public void SettingsExit()
+    {
         settingsMenuUI.SetActive(false);
     }
 
-    public void Help () {
-        Debug.Log ("Opened Help...");
+    public void Help()
+    {
+        Debug.Log("Opened Help...");
         helpMenuUI.SetActive(true);
     }
 
-    public void HelpExit () {
+    public void HelpExit()
+    {
         helpMenuUI.SetActive(false);
     }
 
-    public void QuitGame () {
+    public void QuitGame()
+    {
         Debug.Log("QUIT!");
         Application.Quit();
     }

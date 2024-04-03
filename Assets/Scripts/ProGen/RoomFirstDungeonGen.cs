@@ -23,12 +23,33 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
     Vector2Int startPos, endPos;
 
     [SerializeField]
-    private GameObject enemy1, enemy2, enemy3, enemy4;
+    private GameObject enemy1, enemy2, enemy3, enemy4, enemy5;
+
+    [SerializeField]
+    private GameObject bigEnemy;
 
     GameObject[] enemyArr;
+    List<Vector2Int> enemyPos;
     void Start()
     {
-        enemyArr = new GameObject[] { enemy1, enemy2, enemy3, enemy4 };
+        enemyArr = new GameObject[] { enemy1, enemy2, enemy3, enemy4, enemy5 };
+
+        for (int i = 0; i < enemyPos.Count; i++)
+        {
+            // Select a random enemy from enemyArr
+            GameObject enemyToSpawn = enemyArr[Random.Range(0, enemyArr.Length)];
+
+            // Convert Vector2Int to Vector3
+            Vector3 spawnPosition = new Vector3(enemyPos[i].x, enemyPos[i].y, 0);
+
+            // Spawn the enemy at the position
+            Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
+        }
+
+        playerObj.transform.position = new Vector3(startPos.x, startPos.y, 0);
+        Instantiate(bigEnemy, new Vector3(endPos.x, endPos.y, 0), Quaternion.identity);
+
+        Debug.Log("Room First Dungeon Generation");
     }
 
     public void RunGeneration()
@@ -70,26 +91,13 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
 
         HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
         floor.UnionWith(corridors);
-        List<Vector2Int> enemyPos = tilemapVisualizer.PaintFloorTiles(floor);
+        enemyPos = tilemapVisualizer.PaintFloorTiles(floor);
+        Debug.Log(enemyPos.Count);
         WallGen.CreateWalls(floor, tilemapVisualizer);
 
         //startSquare.transform.position = new Vector3(startPos.x, startPos.y, 10);
         //playerObj.transform.position = new Vector3(startPos.x, startPos.y, 0);
-        endSquare.transform.position = new Vector3(endPos.x, endPos.y, -1);
-
-        for (int i = 0; i < enemyPos.Count; i++)
-        {
-            // Select a random enemy from enemyArr
-            GameObject enemyToSpawn = enemyArr[Random.Range(0, enemyArr.Length)];
-
-            // Convert Vector2Int to Vector3
-            Vector3 spawnPosition = new Vector3(enemyPos[i].x, enemyPos[i].y, -1);
-
-            // Spawn the enemy at the position
-            Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
-        }
-
-        playerObj.transform.position = new Vector3(startPos.x, startPos.y, -1);
+        endSquare.transform.position = new Vector3(endPos.x, endPos.y, 0);
     }
 
     private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)

@@ -68,14 +68,6 @@ public class WallGen
                 var neighbourPosition = position + direction;
                 if (floorPositions.Contains(neighbourPosition) == false)
                     wallPositions.Add(neighbourPosition);
-
-                // //OLD METHOD
-
-                // var neighbourPosition = position + direction;
-                // if (floorPositions.Contains(neighbourPosition) == false && floorPositions.Contains(neighbourPosition + direction) == false)
-                //     wallPositions.Add(neighbourPosition);
-                // else
-                //     tilemapVisualizer.PaintSingleFloorTile(neighbourPosition);
             }
         }
         return wallPositions;
