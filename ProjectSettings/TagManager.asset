@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - HealingPotion
+  - Enemy
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -13,10 +15,10 @@ TagManager:
   - Water
   - UI
   - 
+  - Entity
   - 
   - 
-  - 
-  - 
+  - Map
   - 
   - 
   - 
