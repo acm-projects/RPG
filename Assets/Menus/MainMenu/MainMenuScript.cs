@@ -13,6 +13,8 @@ public class MainMenuScript : MonoBehaviour
     
     void Start () {
         Time.timeScale = 1; //starts time 
+        settingsMenuUI.SetActive(false);
+        helpMenuUI.SetActive(false);
     }
 
     public void StartGame () {

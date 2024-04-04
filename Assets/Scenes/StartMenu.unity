@@ -574,25 +574,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2467960137244657575, guid: 705d60904d947b14aabee22ed21af664, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2467960137244657575, guid: 705d60904d947b14aabee22ed21af664, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3881433338308344891, guid: 705d60904d947b14aabee22ed21af664, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5318840194426701464, guid: 705d60904d947b14aabee22ed21af664, type: 3}
       propertyPath: m_Name
       value: SettingsMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 5318840194426701464, guid: 705d60904d947b14aabee22ed21af664, type: 3}
-      propertyPath: m_IsActive
+    - target: {fileID: 7190063217527896862, guid: 705d60904d947b14aabee22ed21af664, type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9113212956888821485, guid: 705d60904d947b14aabee22ed21af664, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 332487787}
-    - target: {fileID: 9113212956888821485, guid: 705d60904d947b14aabee22ed21af664, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SetActive
+    - target: {fileID: 8544574637122785624, guid: 705d60904d947b14aabee22ed21af664, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9113212956888821485, guid: 705d60904d947b14aabee22ed21af664, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+    - target: {fileID: 8544574637122785624, guid: 705d60904d947b14aabee22ed21af664, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8544574637122785624, guid: 705d60904d947b14aabee22ed21af664, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1239,10 +1251,10 @@ AudioSource:
   m_GameObject: {fileID: 949508627}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: f103877ba84bec846a010e6b8722d6ad, type: 2}
   m_audioClip: {fileID: 8300000, guid: 2bbf5d4e54f49ba4283b4c71523babbe, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.396
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0

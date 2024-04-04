@@ -37,6 +37,7 @@ public class GameStateManager : MonoBehaviour
         }
     }
 
+    //Pauses game
     public void Pause() {
         pauseMenuUI.SetActive(true);
 
@@ -44,6 +45,7 @@ public class GameStateManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    //Resumes game
     public void Resume() {
         MenuItems(false);
         GameItems(true);
@@ -51,6 +53,7 @@ public class GameStateManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    //Sets scene to main menu
     public void LoadMenu () {
         Debug.Log ("Switched to Main Menu...");
         SceneManager.LoadScene(0); //goes to main menu
@@ -58,13 +61,21 @@ public class GameStateManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    public void changeLevel (int level) {
+        SceneManager.LoadScene(level);
+    }
+
+    public void nextLevel () {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1); //gets next active scene
+    }
+
     // Open and Closes Settings Menu
-    public void Settings (bool flag) {
+    private void Settings (bool flag) {
         settingsMenuUI.SetActive(flag);
     }
 
     // Open and Closes Help Menu
-    public void Help (bool flag) {
+    private void Help (bool flag) {
         helpMenuUI.SetActive(flag);
     }
 
@@ -75,6 +86,7 @@ public class GameStateManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    // Opens skill information popup
     public void OpenSkillInfo (int skill) {
         skillInfoMenus[skill].SetActive(true);
     }
@@ -87,6 +99,7 @@ public class GameStateManager : MonoBehaviour
         Time.timeScale = 0f;
     }
 
+    // Sets all menu screens to active or unactive (based on flag)
     private void MenuItems(bool flag) {
         pauseMenuUI.SetActive(flag);
         settingsMenuUI.SetActive(flag);
@@ -95,6 +108,8 @@ public class GameStateManager : MonoBehaviour
             skillInfoMenus[i].SetActive(flag);
         }
     }
+
+    //Sets all on screen game items (Canvas type) to active or unactive (based on flag)
     private void GameItems(bool flag) {
         playerHPBar.SetActive(flag);
         skillsUI.SetActive(flag);

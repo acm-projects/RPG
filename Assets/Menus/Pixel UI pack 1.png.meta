@@ -1732,7 +1732,7 @@ TextureImporter:
         serializedVersion: 2
         x: 48
         y: 416
-        width: 16
+        width: 48
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1743,48 +1743,6 @@ TextureImporter:
       bones: []
       spriteID: ec2f353d075206b44882eceae1f97c92
       internalID: 1905286492
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel UI pack 1_153
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 416
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c57faff9f9b0a474cb1849d2dfe9c48a
-      internalID: -1379631150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pixel UI pack 1_154
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 416
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fff17c1778bf43841b28c323361f5497
-      internalID: -1389003214
       vertices: []
       indices: 
       edges: []
