@@ -16,6 +16,8 @@ public class GameStateManager : MonoBehaviour
 
     public GameObject[] skillInfoMenus;
 
+    public GameObject levelTransition;
+
 
     
     void Start () {
@@ -24,6 +26,7 @@ public class GameStateManager : MonoBehaviour
         gameOverUI.SetActive(false);
         MenuItems(false);
         GameItems(true);
+        levelTransition.SetActive(false);
     }
 
     //Checks if player presses ESCAPE to pause/unpause game
@@ -62,10 +65,16 @@ public class GameStateManager : MonoBehaviour
     }
 
     public void changeLevel (int level) {
+        
         SceneManager.LoadScene(level);
     }
 
-    public void nextLevel () {
+    public void nextLevel() {
+        levelTransition.SetActive(true);
+        //levelTransition.GetComponent<Animator>().SetTrigger("LevelTransition");
+    }
+
+    public void goToNextLevel () {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1); //gets next active scene
     }
 

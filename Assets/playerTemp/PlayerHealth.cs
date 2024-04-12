@@ -11,11 +11,14 @@ public class PlayerHealth : MonoBehaviour
     public HealthBar healthBar;
     public Text healthText;
     public GameStateManager gameStateManager;
+    private PlayerMovement playerMovement;
+
     void Start()
     {
         currentHealth = maxHealth;
         healthBar.SetMaxHealth(maxHealth);
         UpdateHealthText();
+        playerMovement = GetComponent<PlayerMovement>(); 
     }
 
     void Update()

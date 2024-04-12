@@ -38,12 +38,16 @@ public class EnemyProjectileMovementScript : MonoBehaviour
         }
     }
 
+    //hits object
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         { //if hit player
-            Destroy(gameObject);
-            other.GetComponent<playerTempScript>().takeDamage(projectileDamage);
+           if (!other.GetComponent<PlayerMovement>().IsShielded()) // Add this condition
+            {
+                Destroy(gameObject);
+                other.GetComponent<PlayerHealth>().TakeDamage(projectileDamage);
+            }
         }
         else if (other.gameObject.CompareTag("Wall"))
         { //if hit wall

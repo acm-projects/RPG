@@ -34,40 +34,48 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
 
     bool facingRight = true; 
 
+    protected bool isDead = false;
+
     public void InitializeEnemy () {
         currentHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
     }
     public void DefaultMovement() {
-        float distance = Vector2.Distance(transform.position, player.transform.position); //distance from player
-        direction = player.transform.position - transform.position; //direction 
+        if (!isDead) {
+            float distance = Vector2.Distance(transform.position, player.transform.position); //distance from player
+            direction = player.transform.position - transform.position; //direction 
 
-        if (distance < enemyPursuingRange) { //if in PURSING range of character
-            PursuingAction();
+            if (distance < enemyPursuingRange) { //if in PURSING range of character
+                PursuingAction();
 
-            timerAttackInterval += Time.deltaTime;
-            timerAttackDelay -= Time.deltaTime;
-            if (timerAttackInterval > attackInterval && distance < enemyAttackRange) { //if can attack + in range
-                timerAttackInterval = 0;
-                timerAttackDelay = attackMovementDelay;
-                AttackingAction();
+                timerAttackInterval += Time.deltaTime;
+                timerAttackDelay -= Time.deltaTime;
+                if (timerAttackInterval > attackInterval && distance < enemyAttackRange) { //if can attack + in range
+                    timerAttackInterval = 0;
+                    timerAttackDelay = attackMovementDelay;
+                    AttackingAction();
+                }
+            } else {
+                IdleAction();
             }
-        } else {
-            IdleAction();
-        }
 
-        //face correct direction (LEFT and RIGHT)
-        if (direction.x > 0 && !facingRight) {
-            Vector3 tempScale = transform.localScale;
-            tempScale.x *= -1;
-            transform.localScale = tempScale;
-            facingRight = true;
-        } else if (direction.x < 0 && facingRight) {
-            Vector3 tempScale = transform.localScale;
-            tempScale.x *= -1;
-            transform.localScale = tempScale;
-            facingRight = false;
+            //face correct direction (LEFT and RIGHT)
+            if (direction.x > 0 && !facingRight) {
+                Vector3 tempScale = transform.localScale;
+                tempScale.x *= -1;
+                transform.localScale = tempScale;
+                facingRight = true;
+            } else if (direction.x < 0 && facingRight) {
+                Vector3 tempScale = transform.localScale;
+                tempScale.x *= -1;
+                transform.localScale = tempScale;
+                facingRight = false;
+            }
+
+            animator.SetFloat("Vertical", direction.y);
+            animator.SetFloat("Horizontal", direction.x);
         }
+        
     }
 
     // Start is called before the first frame update
@@ -82,7 +90,14 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
      * damage the damage taken
      */
     public void TakeDamage (int damage) {
+        animator.SetTrigger("isHit");
         currentHealth -= damage; 
+        
+        if (currentHealth <= 0) {
+            isDead = true;
+            animator.SetTrigger("isDead");
+            Destroy(gameObject); // **make this run after a death animation!!
+        }
     }
 
     // Health setter and getter
@@ -102,11 +117,47 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
 
     // default melee attack behavior
     public void DefaultMeleeAttack(Collider2D attackPoint) {
-        if (attackPoint.IsTouching(player.GetComponent<Collider2D>())) { //if attack hits player
+          if (!player.GetComponent<PlayerMovement>().IsShielded() && attackPoint.IsTouching(player.GetComponent<Collider2D>())) //hits player if not shielded
+        {
+
             StartCoroutine(player.GetComponent<playerTempScript>().takeDamage(attackDamage, direction.normalized * knockbackForce, knockbackTime));
         }
     }
 
+    public void DefaultRandomMeleeEnemy () {
+        //Attack stats
+        attackInterval = Random.Range(0.5f, 1.5f);
+        attackMovementDelay = Random.Range(0.1f, 0.8f);
+        attackDamage = Random.Range(1, 5);
+
+        //Player knockback stats
+        knockbackForce = Random.Range(10, 20);
+        knockbackTime = Random.Range(0.1f, 0.3f);
+        
+        //Movement behavior
+        enemyPursuingRange = Random.Range(10, 12);
+        enemyAttackRange = Random.Range(1,2);
+        
+        chaseSpeed = Random.Range(1, 8);
+    }
+
+    public void DefaultRandomRangeEnemy () {
+        //Attack stats
+        attackInterval = Random.Range(0.5f, 1.5f);
+        attackMovementDelay = Random.Range(0.1f, 0.8f);
+        attackDamage = Random.Range(1, 5);
+
+        //Player knockback stats
+        knockbackForce = Random.Range(10, 20);
+        knockbackTime = Random.Range(0.1f, 0.3f);
+        
+        //Movement behavior
+        enemyPursuingRange = Random.Range(10, 12);
+        
+        enemyAttackRange = Random.Range(7, 10);;
+        
+        chaseSpeed = Random.Range(1, 8);
+    }
     protected abstract void IdleAction();
     protected abstract void AttackingAction();
     protected abstract void PursuingAction();

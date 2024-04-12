@@ -11,10 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/EnemyTestScene.unity
     guid: bab5b1a4436afea47b2c8946bb94216d
-  - enabled: 0
-    path: Assets/Scenes/Level One.unity
-    guid: fbf46ce4400c61a41a057992bd5a9d68
   - enabled: 1
     path: Assets/Scenes/CombinedTest.unity
     guid: 66c51b59131f0c0448705b70f5a20024
+  - enabled: 1
+    path: Assets/Scenes/Level One.unity
+    guid: fbf46ce4400c61a41a057992bd5a9d68
   m_configObjects: {}
