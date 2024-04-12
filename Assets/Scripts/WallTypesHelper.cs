@@ -6,19 +6,6 @@ using UnityEngine;
 
 public static class WallTypesHelper
 {
-    public static HashSet<int> wallTop = new HashSet<int>
-    {
-        0b1111,
-        0b0110,
-        0b0011,
-        0b0010,
-        0b1010,
-        0b1100,
-        0b1110,
-        0b1011,
-        0b0111
-    };
-
     public static HashSet<int> wallSideLeft = new HashSet<int>
     {
         0b0100
@@ -152,6 +139,19 @@ public static class WallTypesHelper
     public static HashSet<int> wallBottmEightDirections = new HashSet<int>
     {
         0b01000001
+    };
+
+    public static HashSet<int> wallTop = new HashSet<int>
+    {
+        0b1111,
+        0b0110,
+        0b0011,
+        0b0010,
+        0b1010,
+        0b1100,
+        0b1110,
+        0b1011,
+        0b0111
     };
 
 }

@@ -19,7 +19,7 @@ public class SimpleRandomWalkDungeonGen : AbstractDungeonGen
         //clearing the current generated tiles then painting new floor ones
         tilemapVisualizer.Clear();
         tilemapVisualizer.PaintFloorTiles(floorPositions);
-        WallGen.CreateWalls(floorPositions, tilemapVisualizer);
+        WallGen.CreateWalls(floorPositions, tilemapVisualizer, LevelType.Underground);
     }
 
     protected HashSet<Vector2Int> RunRandomWalk(SimpleRandomWalkSO parameters, Vector2Int position)

@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomEnemyScript : EnemyAbstract
-{   
+{
     //melee attacks
-    public Collider2D attackPoint; 
+    public Collider2D attackPoint;
     //ranged attacks
     public GameObject projectile;
     public Transform projectilePos;
 
-    public int enemyType; 
+    public int enemyType;
 
 
     // Start is called before the first frame update
@@ -24,19 +24,20 @@ public class RandomEnemyScript : EnemyAbstract
 
         //Player knockback stats
         knockbackForce = Random.Range(10, 20);
-        knockbackTime = Random.Range(0.1f, 0.3f);;
-        
+        knockbackTime = Random.Range(0.1f, 0.3f); ;
+
         //Movement behavior
         enemyPursuingRange = Random.Range(10, 12);
-        switch (enemyType) {
+        switch (enemyType)
+        {
             case 0: //MELEE
-                enemyAttackRange = Random.Range(1,2);
+                enemyAttackRange = Random.Range(1, 2);
                 break;
             case 1: //RANGED
-                enemyAttackRange = Random.Range(7, 10);;
+                enemyAttackRange = Random.Range(7, 10); ;
                 break;
         }
-        
+
         chaseSpeed = Random.Range(1, 8);
 
         InitializeEnemy();
@@ -48,9 +49,11 @@ public class RandomEnemyScript : EnemyAbstract
         DefaultMovement();
     }
 
-    protected override void AttackingAction() {
+    protected override void AttackingAction()
+    {
         animator.SetTrigger("isAttacking");
-        switch (enemyType) {
+        switch (enemyType)
+        {
             case 0: //MELEE
                 DefaultMeleeAttack(attackPoint);
                 break;
@@ -60,12 +63,14 @@ public class RandomEnemyScript : EnemyAbstract
         }
     }
 
-    protected override void PursuingAction() {
+    protected override void PursuingAction()
+    {
         animator.SetBool("isPursuing", true);
         DefaultPursuingAction();
     }
 
-    protected override void IdleAction () {
+    protected override void IdleAction()
+    {
         animator.SetBool("isPursuing", false);
     }
 }

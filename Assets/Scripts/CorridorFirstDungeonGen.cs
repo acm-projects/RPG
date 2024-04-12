@@ -45,7 +45,7 @@ public class CorridorFirstDungeonGen : SimpleRandomWalkDungeonGen
         }
 
         tilemapVisualizer.PaintFloorTiles(floorPositions);
-        WallGen.CreateWalls(floorPositions, tilemapVisualizer);
+        WallGen.CreateWalls(floorPositions, tilemapVisualizer, LevelType.Underground);
 
     }
 

@@ -28,6 +28,8 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
     [SerializeField]
     private GameObject bigEnemy;
 
+    private LevelType levelType = LevelType.Underground;
+
     GameObject[] enemyArr;
     List<Vector2Int> enemyPos;
     void Start()
@@ -93,7 +95,11 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
         floor.UnionWith(corridors);
         enemyPos = tilemapVisualizer.PaintFloorTiles(floor);
         Debug.Log(enemyPos.Count);
-        WallGen.CreateWalls(floor, tilemapVisualizer);
+
+        if (bigEnemy != null)
+            levelType = LevelType.Overworld;
+
+        WallGen.CreateWalls(floor, tilemapVisualizer, levelType);
 
         //startSquare.transform.position = new Vector3(startPos.x, startPos.y, 10);
         //playerObj.transform.position = new Vector3(startPos.x, startPos.y, 0);
