@@ -9,6 +9,7 @@ public class MainMenuScript : MonoBehaviour
     public static bool gameIsPaused = false;
     public GameObject settingsMenuUI;
     public GameObject helpMenuUI;
+    public GameObject levelTransition;
 
     void Start()
     {
@@ -48,5 +49,10 @@ public class MainMenuScript : MonoBehaviour
     {
         Debug.Log("QUIT!");
         Application.Quit();
+    }
+
+     public void nextLevel() {
+        levelTransition.SetActive(true);
+        levelTransition.GetComponent<Animator>().SetTrigger("LevelTransition");
     }
 }

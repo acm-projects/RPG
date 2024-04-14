@@ -5,11 +5,11 @@ using UnityEngine;
 public class playerTempScript : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public Rigidbody2D rb; 
+    public Rigidbody2D rb;
     public Animator animator;
-    private Vector2 movement; 
+    private Vector2 movement;
     //public int health = 100;
-    bool facingRight = true; 
+    //bool facingRight = true;
 
     public PlayerHealth playerHealth;
 
@@ -22,8 +22,8 @@ public class playerTempScript : MonoBehaviour
     void Update()
     {
         //get user input
-        movement.x = Input.GetAxisRaw("Horizontal");
-        movement.y = Input.GetAxisRaw("Vertical");
+        //movement.x = Input.GetAxisRaw("Horizontal");
+        //movement.y = Input.GetAxisRaw("Vertical");
 
         //move character
         //rb.transform.Translate(Vector2.up *Time.deltaTime * movement.y * moveSpeed);
@@ -37,7 +37,8 @@ public class playerTempScript : MonoBehaviour
      * hpLoss the damage taken
      * 
      */
-    public IEnumerator takeDamage(int hpLoss, Vector2 knockback, float delay) {
+    public IEnumerator takeDamage(int hpLoss, Vector2 knockback, float delay)
+    {
         playerHealth.TakeDamage(hpLoss); //reduces HP
 
         //knockback animation
@@ -50,18 +51,27 @@ public class playerTempScript : MonoBehaviour
      *
      * hpLoss the damage taken
      */
-    public void takeDamage(int hpLoss) {
+    public void takeDamage(int hpLoss)
+    {
         playerHealth.TakeDamage(hpLoss); //reduces HP
     }
 
 
-    private void OnTriggerEnter2D(Collider2D other) {
+    private void OnTriggerEnter2D(Collider2D other)
+    {
         // Check if player collides with HealingPotion
-        if (other.CompareTag("HealingPotion")) {
+        if (other.CompareTag("HealingPotion"))
+        {
             // call Heal method from PlayerHealth script
             playerHealth.Heal(20);
             // Destroy HealingPotion
             Destroy(other.gameObject);
+        }
+        if (other.CompareTag("EndTile"))
+        {
+            Debug.Log("EndTile");
+            Destroy(other.gameObject);
+            UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

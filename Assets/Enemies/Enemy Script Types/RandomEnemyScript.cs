@@ -25,6 +25,7 @@ public class RandomEnemyScript : EnemyAbstract
         //Player knockback stats
         knockbackForce = Random.Range(10, 20);
         knockbackTime = Random.Range(0.1f, 0.3f);
+
         
         //Movement behavior
         enemyPursuingRange = Random.Range(10, 12);

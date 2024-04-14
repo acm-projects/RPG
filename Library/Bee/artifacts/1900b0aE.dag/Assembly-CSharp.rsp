@@ -408,6 +408,7 @@
 "Assets/Scripts/WallGen.cs"
 "Assets/Scripts/WallTypesHelper.cs"
 "Assets/Skills/SkillScripts/abilityCooldown.cs"
+"Assets/TransitionScript.cs"
 -langversion:9.0
 
 /deterministic

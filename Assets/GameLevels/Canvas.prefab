@@ -2886,6 +2886,7 @@ MonoBehaviour:
   - {fileID: 1837670176340483461}
   - {fileID: 1293928520212767367}
   - {fileID: 4589362015190315617}
+  levelTransition: {fileID: 0}
 --- !u!114 &6968484683910500324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2898,6 +2899,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f869afb7b29c0f45a21f28e637918d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  abilityImageArr: []
+  cooldownArr: []
+  cooldownFlagArr: 
+  abilityKeyArr: 
   abilityImage1: {fileID: 1236977776564779044}
   cooldown1: 5
   ability1: 49
@@ -3788,7 +3793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3095028607203136419, guid: cc50544dd2928604cbfc3e145caa4633, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3125947418980822671, guid: cc50544dd2928604cbfc3e145caa4633, type: 3}
       propertyPath: m_Pivot.x
@@ -4269,7 +4274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3792994100162719861, guid: 7f310d1487b3bcd45a51bf36ebea7d68, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7240180054399714452, guid: 7f310d1487b3bcd45a51bf36ebea7d68, type: 3}
       propertyPath: m_Sprite

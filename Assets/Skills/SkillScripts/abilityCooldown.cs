@@ -4,6 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 public class abilityCooldown : MonoBehaviour
 {
+    public Image[] abilityImageArr;
+    public float[] cooldownArr;
+    public bool[] cooldownFlagArr;
+    public KeyCode[] abilityKeyArr;
+
     // Ability 1
     public Image abilityImage1;
     public float cooldown1 = 5;
@@ -33,6 +38,8 @@ public class abilityCooldown : MonoBehaviour
     public float cooldown5 = 5;
     bool isCooldown5 = false;
     public KeyCode ability5;
+
+
 
 
     // Start is called before the first frame update

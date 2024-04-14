@@ -38,17 +38,20 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f) * speed * Time.deltaTime;
         transform.position += movement;
 
-        animator.SetFloat("Horizontal", movement.x);
-        animator.SetFloat("Vertical", movement.y);
-        animator.SetFloat("Speed", movement.sqrMagnitude);
+        animator.SetFloat("Horizontal", moveHorizontal);
+        animator.SetFloat("Vertical", moveVertical);
+        if (movement.x == 0 && movement.y == 0)
+            animator.SetFloat("Speed", 0);
+        else 
+            animator.SetFloat("Speed", 1);
 
         //face correct direction (LEFT and RIGHT)
-        if (movement.x > 0 && !facingRight) {
+        if (moveHorizontal > 0 && !facingRight) {
             Vector3 tempScale = transform.localScale;
             tempScale.x *= -1;
             transform.localScale = tempScale;
             facingRight = true;
-        } else if (movement.x < 0 && facingRight) {
+        } else if (moveHorizontal < 0 && facingRight) {
             Vector3 tempScale = transform.localScale;
             tempScale.x *= -1;
             transform.localScale = tempScale;

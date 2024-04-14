@@ -71,7 +71,7 @@ public class GameStateManager : MonoBehaviour
 
     public void nextLevel() {
         levelTransition.SetActive(true);
-        //levelTransition.GetComponent<Animator>().SetTrigger("LevelTransition");
+        levelTransition.GetComponent<Animator>().SetTrigger("LevelTransition");
     }
 
     public void goToNextLevel () {
