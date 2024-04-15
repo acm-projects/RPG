@@ -10,7 +10,7 @@ public class LaserScript : MonoBehaviour
 
     public void ShootLaser(Vector3 position, Vector3 direction) {
         if (cooldownTimer <= 0f) {
-            GameObject laserPrefab = Resources.Load<GameObject>("Laser 1");
+            GameObject laserPrefab = Resources.Load<GameObject>("Laser");
             if (laserPrefab != null) {
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);

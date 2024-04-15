@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class BossHealth : MonoBehaviour
 {
-    public int maxHealth = 100;
+    public int maxHealth = 1000;
     public int currentHealth;
-    
     public HealthBar healthBar;
+    public Patrol bossPatrolScript;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -18,6 +19,10 @@ public class BossHealth : MonoBehaviour
     {
         if (currentHealth <= 0) {
             Die();
+        }
+
+        if (currentHealth <= 100) {
+            bossPatrolScript.TransitionToPhase2();
         }
     }
 

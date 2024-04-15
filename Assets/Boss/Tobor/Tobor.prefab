@@ -343,7 +343,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1187941257
   m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &1203888706243879401
@@ -463,8 +463,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1187941257
+  m_SortingLayer: 3
   m_SortingOrder: 2
   m_Sprite: {fileID: -126115132, guid: 3dc2f1218b957fb43aef2c375a25eed8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -510,7 +510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66600842b19516045b2bfbf7151a6fd3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  playerTag: Player
   speed: 1.5
   damageAmount: 5
 --- !u!61 &7252421603452481679
@@ -566,12 +566,12 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5125118594573636713}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 5
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -584,7 +584,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2627598010334250634
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -642,6 +642,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad3c07cdcac8f894ab256e08978c3223, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  maxHealth: 50
   currentHealth: 0
   healthBar: {fileID: 8268183050250607639}

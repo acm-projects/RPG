@@ -13,11 +13,15 @@ public class Bullet : MonoBehaviour
     void OnCollisionEnter2D(Collision2D collision) {
         ToborHealth toborHealth = collision.gameObject.GetComponent<ToborHealth>();
         BossHealth bossHealth = collision.gameObject.GetComponent<BossHealth>();
+        HandHealth handHealth = collision.gameObject.GetComponent<HandHealth>();
         if (toborHealth != null) {
             toborHealth.TakeDamage(10);
         }
         else if (bossHealth != null) {
             bossHealth.TakeDamage(10);
+        }
+        else if (handHealth != null) {
+            handHealth.TakeDamage(10);
         }
         Destroy(gameObject);
     }

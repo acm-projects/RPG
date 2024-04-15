@@ -17,6 +17,7 @@ public class BossAI : MonoBehaviour
     private LayerMask visibilityLayer;
 
     public LaserScript laserScript;
+    public Transform mouthPosition;
     public bool IsPlayerDetected { get; private set; }
 
     private void Start() {
@@ -32,8 +33,8 @@ public class BossAI : MonoBehaviour
         }
 
         if (IsPlayerDetected && laserScript != null && target != null) {
-            Vector3 direction = (target.position - transform.position).normalized;
-            laserScript.ShootLaser(transform.position, direction);
+            Vector3 direction = (target.position - mouthPosition.position).normalized;
+            laserScript.ShootLaser(mouthPosition.position, direction);
         }
         
     }
