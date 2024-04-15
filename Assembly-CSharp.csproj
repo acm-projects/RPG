@@ -40,14 +40,13 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\playerTemp\TEMP_playerprojectilescript.cs" />
      <Compile Include="Assets\Scripts\ProcedualGenerationAlgorithms.cs" />
      <Compile Include="Assets\Skills\SkillScripts\abilityCooldown.cs" />
      <Compile Include="Assets\General Scripts\IDamageable.cs" />
      <Compile Include="Assets\Scripts\WallTypesHelper.cs" />
+     <Compile Include="Assets\Player\TEMP_playerprojectilescript.cs" />
      <Compile Include="Assets\Scripts\ProGen\TilemapVisualizer.cs" />
      <Compile Include="Assets\Scripts\RunTest.cs" />
-     <Compile Include="Assets\playerTemp\TEMP_PlayerAttackScript.cs" />
      <Compile Include="Assets\Menus\GameStateManager.cs" />
      <Compile Include="Assets\Scripts\CorridorFirstDungeonGen.cs" />
      <Compile Include="Assets\Menus\Help\Skill Info\PopupScript.cs" />
@@ -60,24 +59,24 @@
      <Compile Include="Assets\Scripts\ProGen\RoomFirstDungeonGen.cs" />
      <Compile Include="Assets\Scripts\Minimap\MinimapGame.cs" />
      <Compile Include="Assets\Enemies\old scripts\EnemyMeleeScript.cs" />
+     <Compile Include="Assets\Player\TEMP_PlayerAttackScript.cs" />
      <Compile Include="Assets\Enemies\EnemyAbstract.cs" />
      <Compile Include="Assets\Scripts\LevelType.cs" />
      <Compile Include="Assets\Scripts\WallGen.cs" />
      <Compile Include="Assets\Scripts\Data\SimpleRandomWalkSO.cs" />
-     <Compile Include="Assets\General Scripts\GameLogicScript.cs" />
      <Compile Include="Assets\Enemies\Enemy Script Types\RangedEnemy.cs" />
      <Compile Include="Assets\Enemies\Enemy Script Types\RandomMeleeEnemy.cs" />
      <Compile Include="Assets\Scripts\Minimap\MinimapWindow.cs" />
      <Compile Include="Assets\Menus\gameOver\gameOverScreen.cs" />
-     <Compile Include="Assets\TransitionScript.cs" />
-     <Compile Include="Assets\playerTemp\PlayerHealth.cs" />
-     <Compile Include="Assets\playerTemp\playerTempScript.cs" />
      <Compile Include="Assets\Enemies\Enemy Script Types\MeleeEnemy.cs" />
-     <Compile Include="Assets\playerTemp\PlayerMovement.cs" />
+     <Compile Include="Assets\Menus\Transitions\TransitionScript.cs" />
      <Compile Include="Assets\Enemies\Enemy Script Types\RandomRangeEnemy.cs" />
      <Compile Include="Assets\Enemies\EnemyProjectileMovementScript.cs" />
      <Compile Include="Assets\Enemies\old scripts\DefaultEnemyScript.cs" />
      <Compile Include="Assets\Enemies\Enemy Script Types\RandomEnemyScript.cs" />
+     <Compile Include="Assets\Player\PlayerHealth.cs" />
+     <Compile Include="Assets\GameLevels\GameLogicScript.cs" />
+     <Compile Include="Assets\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Health\HealthScripts\HealthBar.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />

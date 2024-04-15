@@ -6,9 +6,12 @@ using UnityEngine.Audio;
 
 public class SettingsManager : MonoBehaviour
 {
-    public AudioMixer audioMixer;
-    Resolution[] resolutions;
-    public Dropdown resolutionDropdown;
+    [SerializeField] private AudioMixer audioMixer;
+    private Resolution[] resolutions;
+    [SerializeField] private Dropdown resolutionDropdown;
+
+    private static Resolution currentResolution;
+    private static float currentMusicVolume;
 
     void Start () {
         resolutions = Screen.resolutions;

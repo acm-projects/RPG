@@ -380,7 +380,7 @@
 "Assets/Enemies/old scripts/DefaultEnemyScript.cs"
 "Assets/Enemies/old scripts/EnemyMeleeScript.cs"
 "Assets/GameLevels/CameraFollow.cs"
-"Assets/General Scripts/GameLogicScript.cs"
+"Assets/GameLevels/GameLogicScript.cs"
 "Assets/General Scripts/IDamageable.cs"
 "Assets/Health/HealthScripts/HealthBar.cs"
 "Assets/Menus/gameOver/gameOverScreen.cs"
@@ -388,11 +388,11 @@
 "Assets/Menus/Help/Skill Info/PopupScript.cs"
 "Assets/Menus/MainMenu/MainMenuScript.cs"
 "Assets/Menus/Settings/SettingsManager.cs"
-"Assets/playerTemp/PlayerHealth.cs"
-"Assets/playerTemp/PlayerMovement.cs"
-"Assets/playerTemp/playerTempScript.cs"
-"Assets/playerTemp/TEMP_PlayerAttackScript.cs"
-"Assets/playerTemp/TEMP_playerprojectilescript.cs"
+"Assets/Menus/Transitions/TransitionScript.cs"
+"Assets/Player/PlayerHealth.cs"
+"Assets/Player/PlayerMovement.cs"
+"Assets/Player/TEMP_PlayerAttackScript.cs"
+"Assets/Player/TEMP_playerprojectilescript.cs"
 "Assets/Scripts/AbstractDungeonGen.cs"
 "Assets/Scripts/CorridorFirstDungeonGen.cs"
 "Assets/Scripts/Data/SimpleRandomWalkSO.cs"
@@ -408,7 +408,6 @@
 "Assets/Scripts/WallGen.cs"
 "Assets/Scripts/WallTypesHelper.cs"
 "Assets/Skills/SkillScripts/abilityCooldown.cs"
-"Assets/TransitionScript.cs"
 -langversion:9.0
 
 /deterministic

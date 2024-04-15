@@ -6,39 +6,40 @@ using UnityEngine;
 
 public abstract class EnemyAbstract : MonoBehaviour, IDamageable
 {
-    public int maxHealth;
-    public int currentHealth;
+    [SerializeField] protected int maxHealth;
+    [SerializeField] protected int currentHealth;
 
-    public Animator animator;
-    public Rigidbody2D rb;
-    GameObject player;
+    protected Animator animator;
+    protected Rigidbody2D rb;
+    protected GameObject player;
 
     //Attack stats
-    public float attackInterval;
-    public float attackMovementDelay;
-    public int attackDamage;
+    [SerializeField] protected float attackInterval;
+    [SerializeField] protected float attackMovementDelay;
+    [SerializeField] protected int attackDamage;
 
     //Player knockback stats
-    public float knockbackForce;
-    public float knockbackTime;
+    [SerializeField] protected float knockbackForce;
+    [SerializeField] protected float knockbackTime;
     
     //Movement behavior
-    public int enemyPursuingRange;
-    public int enemyAttackRange;
-    public float chaseSpeed;
+    [SerializeField] protected int enemyPursuingRange;
+    [SerializeField] protected int enemyAttackRange;
+    [SerializeField] protected float chaseSpeed;
     
     //Timers
-    float timerAttackInterval = 0;
-    float timerAttackDelay = 0;
-    Vector2 direction;
+    protected float timerAttackInterval = 0;
+    protected float timerAttackDelay = 0;
+    protected Vector2 direction;
 
-    bool facingRight = true; 
-
+    protected bool facingRight = true; //sprite facing right or not
     protected bool isDead = false;
 
     public void InitializeEnemy () {
         currentHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
+        animator = player.GetComponent<Animator>();
+        rb = player.GetComponent<Rigidbody2D>();
     }
     public void DefaultMovement() {
         if (!isDead) {
@@ -120,7 +121,7 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
           if (!player.GetComponent<PlayerMovement>().IsShielded() && attackPoint.IsTouching(player.GetComponent<Collider2D>())) //hits player if not shielded
         {
 
-            StartCoroutine(player.GetComponent<playerTempScript>().takeDamage(attackDamage, direction.normalized * knockbackForce, knockbackTime));
+            StartCoroutine(player.GetComponent<PlayerMovement>().KnockbackDamage(attackDamage, direction.normalized * knockbackForce, knockbackTime));
         }
     }
 
@@ -158,7 +159,7 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
         
         chaseSpeed = Random.Range(1, 8);
     }
-    protected abstract void IdleAction();
-    protected abstract void AttackingAction();
-    protected abstract void PursuingAction();
+    protected abstract void IdleAction(); // Called while enemy is idling
+    protected abstract void AttackingAction(); // Called while enemy is attacking
+    protected abstract void PursuingAction(); // Called while enemy is pursuing player
 }
