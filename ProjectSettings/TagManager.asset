@@ -6,8 +6,12 @@ TagManager:
   tags:
   - HealingPotion
   - Enemy
+<<<<<<< HEAD
   - Wall
   - EndTile
+=======
+  - Tobor
+>>>>>>> Boss
   layers:
   - Default
   - TransparentFX
@@ -15,11 +19,19 @@ TagManager:
   - 
   - Water
   - UI
+<<<<<<< HEAD
   - 
   - Entity
   - 
   - 
   - Map
+=======
+  - Player
+  - Enemy
+  - Laser
+  - Tobor
+  - 
+>>>>>>> Boss
   - 
   - 
   - 
@@ -44,4 +56,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3848721323
+    locked: 0
+  - name: Stars
+    uniqueID: 3491898683
+    locked: 0
+  - name: Player
+    uniqueID: 3107026039
     locked: 0
