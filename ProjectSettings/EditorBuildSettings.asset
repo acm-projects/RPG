@@ -8,6 +8,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: f7ac5a97fc165e747b92f768f92e8719
+  - enabled: 1
+    path: Assets/Scenes/Test-Aendri.unity
+    guid: 91baddfa7a09da84ebb3f0147d8de734
   - enabled: 0
     path: Assets/Scenes/EnemyTestScene.unity
     guid: bab5b1a4436afea47b2c8946bb94216d

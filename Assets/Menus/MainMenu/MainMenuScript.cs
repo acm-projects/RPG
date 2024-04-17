@@ -16,6 +16,10 @@ public class MainMenuScript : MonoBehaviour
         Time.timeScale = 1; //starts time 
         settingsMenuUI.SetActive(false);
         helpMenuUI.SetActive(false);
+        levelTransition.SetActive(false);
+        PlayerHealthManager.currentPlayerHealth = 100; //sets player HP to max
+        PlayerHealthManager.currentResetHealth = 100; //sets reset hp to max as well
+        GameLogicScript.resetLevels();
     }
 
     public void StartGame()

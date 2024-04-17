@@ -17,29 +17,17 @@ public class RandomEnemyScript : EnemyAbstract
     void Start()
     {
         enemyType = Random.Range(0, 2);
-        //Attack stats
-        attackInterval = Random.Range(0.5f, 1.5f);
-        attackMovementDelay = Random.Range(0.1f, 0.8f);
-        attackDamage = Random.Range(1, 5);
-
-        //Player knockback stats
-        knockbackForce = Random.Range(10, 20);
-        knockbackTime = Random.Range(0.1f, 0.3f);
-
         
         //Movement behavior
         enemyPursuingRange = Random.Range(10, 12);
         switch (enemyType) {
             case 0: //MELEE
-                enemyAttackRange = Random.Range(1,2);
+                DefaultRandomMeleeEnemy ();
                 break;
             case 1: //RANGED
-                enemyAttackRange = Random.Range(7, 10);;
+                DefaultRandomRangeEnemy ();
                 break;
         }
-        
-        chaseSpeed = Random.Range(1, 8);
-
         InitializeEnemy();
     }
 

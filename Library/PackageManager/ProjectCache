@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638483870067472630
-    m_Hash: 421546783
+      ticks: 638487649481264842
+    m_Hash: 2717815145
   m_LockFileStatus:
     m_FilePath: C:/Users/zestyxace/RPG/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638483870067567514
-    m_Hash: 3212886923
+      ticks: 638487649481264842
+    m_Hash: 1679265551
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:

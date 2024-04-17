@@ -35,11 +35,18 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
     protected bool facingRight = true; //sprite facing right or not
     protected bool isDead = false;
 
+    [SerializeField] protected GameObject healthBar;
+    protected HealthBar healthBarScript;
+
     public void InitializeEnemy () {
         currentHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player");
-        animator = player.GetComponent<Animator>();
-        rb = player.GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
+        healthBarScript = healthBar.GetComponent<HealthBar>();
+
+        healthBarScript.SetMaxHealth(maxHealth);
+        healthBar.SetActive(false);
     }
     public void DefaultMovement() {
         if (!isDead) {
@@ -47,6 +54,7 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
             direction = player.transform.position - transform.position; //direction 
 
             if (distance < enemyPursuingRange) { //if in PURSING range of character
+                healthBar.SetActive(true);
                 PursuingAction();
 
                 timerAttackInterval += Time.deltaTime;
@@ -57,6 +65,7 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
                     AttackingAction();
                 }
             } else {
+                healthBar.SetActive(false);
                 IdleAction();
             }
 
@@ -65,11 +74,23 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
                 Vector3 tempScale = transform.localScale;
                 tempScale.x *= -1;
                 transform.localScale = tempScale;
+
+                //flip healthbar back
+                tempScale = healthBar.transform.localScale;
+                tempScale.x *= -1;
+                healthBar.transform.localScale = tempScale;
+
                 facingRight = true;
             } else if (direction.x < 0 && facingRight) {
                 Vector3 tempScale = transform.localScale;
                 tempScale.x *= -1;
                 transform.localScale = tempScale;
+
+                //flip healthbar back
+                tempScale = healthBar.transform.localScale;
+                tempScale.x *= -1;
+                healthBar.transform.localScale = tempScale;
+                
                 facingRight = false;
             }
 
@@ -91,9 +112,11 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
      * damage the damage taken
      */
     public void TakeDamage (int damage) {
+        healthBar.SetActive(true);
         animator.SetTrigger("isHit");
         currentHealth -= damage; 
-        
+        healthBarScript.SetHealth(currentHealth);
+
         if (currentHealth <= 0) {
             isDead = true;
             animator.SetTrigger("isDead");
@@ -127,9 +150,10 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
 
     public void DefaultRandomMeleeEnemy () {
         //Attack stats
-        attackInterval = Random.Range(0.5f, 1.5f);
+        attackInterval = Random.Range(0.5f, 1.5f); 
         attackMovementDelay = Random.Range(0.1f, 0.8f);
-        attackDamage = Random.Range(1, 5);
+        attackDamage = Random.Range(2, 5);
+        attackDamage = (int) (attackDamage * GameLogicScript.getEnemyMultiplier()); 
 
         //Player knockback stats
         knockbackForce = Random.Range(10, 20);
@@ -139,14 +163,16 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
         enemyPursuingRange = Random.Range(10, 12);
         enemyAttackRange = Random.Range(1,2);
         
-        chaseSpeed = Random.Range(1, 8);
+        chaseSpeed = Random.Range(3, 8);
+        chaseSpeed = (int) (chaseSpeed * GameLogicScript.getEnemyMultiplier());
     }
 
     public void DefaultRandomRangeEnemy () {
         //Attack stats
         attackInterval = Random.Range(0.5f, 1.5f);
         attackMovementDelay = Random.Range(0.1f, 0.8f);
-        attackDamage = Random.Range(1, 5);
+        attackDamage = Random.Range(2, 5);
+        attackDamage = (int) (attackDamage * GameLogicScript.getEnemyMultiplier()); 
 
         //Player knockback stats
         knockbackForce = Random.Range(10, 20);
@@ -157,7 +183,8 @@ public abstract class EnemyAbstract : MonoBehaviour, IDamageable
         
         enemyAttackRange = Random.Range(7, 10);;
         
-        chaseSpeed = Random.Range(1, 8);
+        chaseSpeed = Random.Range(3, 8);
+        chaseSpeed = (int) (chaseSpeed * GameLogicScript.getEnemyMultiplier());
     }
     protected abstract void IdleAction(); // Called while enemy is idling
     protected abstract void AttackingAction(); // Called while enemy is attacking

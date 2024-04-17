@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
+    [SerializeField] private int gameLevel;
     [SerializeField] private static bool gameIsPaused = false;
     [SerializeField] private GameObject pauseMenuUI;
     [SerializeField] private GameObject settingsMenuUI;
@@ -20,6 +21,7 @@ public class GameStateManager : MonoBehaviour
     
     void Start () {
         Time.timeScale = 1; //starts time
+        GameLogicScript.setGameLevel(gameLevel);
 
         //Activates and deactivates screen items
         gameOverUI.SetActive(false);
@@ -65,7 +67,6 @@ public class GameStateManager : MonoBehaviour
 
     //Changes level (scene) to given level
     public void changeLevel (int level) {
-        
         SceneManager.LoadScene(level);
     }
 
@@ -92,8 +93,10 @@ public class GameStateManager : MonoBehaviour
 
     // Resets current level
     public void RestartScene() {
+        GameLogicScript.resetLevels(); 
         gameIsPaused = false;
         Time.timeScale = 1;
+        PlayerHealthManager.currentPlayerHealth = PlayerHealthManager.currentResetHealth; //resets hp to value at start of level
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

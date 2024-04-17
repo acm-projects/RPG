@@ -4,33 +4,42 @@ using UnityEngine;
 
 public class GameLogicScript : MonoBehaviour
 {
-    public int currentEnemyCount;
-    public GameObject gameStateCanvas;
-    private GameStateManager gameStateManager;
+    private static float levelMultiplier = 0.5f;
+    public static int gameLevel = 0;
+    private static float enemyMultiplier = 1;
+    private static float spawnMultiplier = 1.5f;
 
-    void Start(){
-        gameStateManager = gameStateCanvas.GetComponent<GameStateManager>();
-    }
-    void Update() {
-        currentEnemyCount = GameObject.FindGameObjectsWithTag ("Enemy").Length;
-        if (canEnterNextLevel()) {
-            gameObject.GetComponent<CircleCollider2D>().isTrigger = true;
-        }
+    public static void enterNextLevel() {
+        if (gameLevel <= 3)
+            gameLevel++;
     }
 
-    public int GetCurrentEnemyCount() { return currentEnemyCount; }
-
-    //If all enemies are dead, can transition to next level
-    public bool canEnterNextLevel() {
-        return (currentEnemyCount <= 0);
+    public static void resetLevels() {
+        gameLevel = 0;
     }
 
-    //when player enters portal, goes to next level
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        { //if player enters portal
-            gameStateManager.nextLevelWithTransition();
-        }
+    public static void setGameLevel (int level) {
+        gameLevel = level;
     }
+
+    public static float getEnemyMultiplier() {
+        return enemyMultiplier + levelMultiplier * gameLevel;
+    }
+
+    public static float getSpawnMultiplier() {
+        return spawnMultiplier + levelMultiplier * gameLevel;
+    }
+
+    public static void setEnemyMultiplier(int newVal) {
+        enemyMultiplier = newVal;
+    }
+    public static void setSpawnMultiplier(int newVal) {
+        spawnMultiplier = newVal;
+    }
+
+    public static void setLevelMultiplier(int newVal) {
+        levelMultiplier = newVal;
+    }
+
+    
 }

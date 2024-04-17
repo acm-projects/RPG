@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cdcbffa62cd514c820fe7655dc5d66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  currentHealth: 0
   healthBar: {fileID: 0}
   healthText: {fileID: 0}
   gameStateManager: {fileID: 0}
@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5643de9c8e6273643897af0f35a8cfe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 8
   animator: {fileID: 7441871260517019692}
   tr: {fileID: 7553825670680500062}
   shield: {fileID: 4916291770905029399}
@@ -215,7 +216,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1505168656193926990}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

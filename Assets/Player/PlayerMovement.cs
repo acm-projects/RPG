@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float speed = 5f; 
+    [SerializeField] private float speed = 8; 
     [SerializeField] private Animator animator;
 
     private PlayerHealth playerHealth;
     private bool canDash = true;
     private bool isDashing;
     private float dashingPower = 10f;
-    private float dashingTime = 0.1f;
+    private float dashingTime = 0.3f;
     private float dashingCooldown = 0.2f;
     private Rigidbody2D rb;
     private bool shielded;
@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         playerHealth = GetComponent<PlayerHealth>();
         rb = GetComponent<Rigidbody2D>();
         shielded = false;
+        tr.emitting = false;
     }
 
     void Update()
@@ -38,8 +39,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0f) * speed * Time.deltaTime;
         transform.position += movement;
 
+        //update animator
         animator.SetFloat("Horizontal", moveHorizontal);
         animator.SetFloat("Vertical", moveVertical);
+
         if (movement.x == 0 && movement.y == 0)
             animator.SetFloat("Speed", 0);
         else 
@@ -60,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
-            StartCoroutine(Dash());
+            StartCoroutine(Dash(new Vector2(moveHorizontal, moveVertical)));
         }
     }
 
@@ -111,6 +114,31 @@ public class PlayerMovement : MonoBehaviour
         tr.emitting = false;
         rb.gravityScale = originalGravity;
         isDashing = false;
+        yield return new WaitForSeconds(dashingCooldown);
+        canDash = true;
+    }
+
+    //Player dash with movement direction
+    private IEnumerator Dash(Vector2 direction)
+    {
+        canDash = false;
+        isDashing = true;
+
+        float originalGravity = rb.gravityScale;
+        rb.gravityScale = 0f;
+        if (direction.x == 0 && direction.y == 0) //player isnt moving
+            rb.AddForce(new Vector2(0, -1) * 10, ForceMode2D.Impulse); //dash moves down
+        else //player moving
+            rb.AddForce(direction.normalized*10, ForceMode2D.Impulse);
+        tr.emitting = true; //turn on dash trail
+
+        yield return new WaitForSeconds(dashingTime);
+
+        tr.emitting = false; //turn off dash trail
+        rb.gravityScale = originalGravity;
+        isDashing = false;
+        rb.velocity = Vector3.zero;
+
         yield return new WaitForSeconds(dashingCooldown);
         canDash = true;
     }

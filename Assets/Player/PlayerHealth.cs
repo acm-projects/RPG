@@ -15,8 +15,10 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        currentHealth = maxHealth;
+        currentHealth = PlayerHealthManager.currentPlayerHealth; //saves value across scenes
+        PlayerHealthManager.currentResetHealth = currentHealth; //value hp reset to on restart
         healthBar.SetMaxHealth(maxHealth);
+        healthBar.SetHealth(currentHealth);
         UpdateHealthText();
         playerMovement = GetComponent<PlayerMovement>(); 
     }
@@ -37,6 +39,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Max(currentHealth, 0);
         healthBar.SetHealth(currentHealth);
         UpdateHealthText();
+        PlayerHealthManager.currentPlayerHealth = currentHealth;
     }
 
     //Increases currentHealth by given amount, update health bar
@@ -48,6 +51,7 @@ public class PlayerHealth : MonoBehaviour
         // Update health bar UI
         healthBar.SetHealth(currentHealth);
         UpdateHealthText();
+        PlayerHealthManager.currentPlayerHealth = currentHealth;
     }
 
     //Updates health bar text to show health amount

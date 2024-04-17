@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Wall
   - EndTile
+  - Settings
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - 
   - 
   - Map
-  - 
+  - HP Bars
   - 
   - 
   - 
