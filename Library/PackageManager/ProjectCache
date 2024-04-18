@@ -5,26 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-<<<<<<< HEAD
-      ticks: 638487521450734098
+      ticks: 638489223533125036
     m_Hash: 2717815145
-=======
-      ticks: 638473500801008334
-    m_Hash: 3104217734
->>>>>>> Boss
   m_LockFileStatus:
     m_FilePath: C:/Users/argue/RPG/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-<<<<<<< HEAD
-      ticks: 638487521450744107
+      ticks: 638489223533135248
     m_Hash: 1679265551
-=======
-      ticks: 638473500801013535
-    m_Hash: 295145596
->>>>>>> Boss
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -32,150 +22,6 @@ m_LocalPackages:
 m_ProjectPath: C:/Users/argue/RPG/Packages
 m_EditorVersion: 2022.3.19f1 (244b723c30a6)
 m_ResolvedPackages:
-<<<<<<< HEAD
-=======
-- packageId: com.unity.collab-proxy@2.2.0
-  testable: 0
-  isDirectDependency: 1
-  version: 2.2.0
-  source: 1
-  resolvedPath: C:\Users\argue\RPG\Library\PackageCache\com.unity.collab-proxy@2.2.0
-  assetPath: Packages/com.unity.collab-proxy
-  name: com.unity.collab-proxy
-  displayName: Version Control
-  author:
-    name: 
-    email: 
-    url: 
-  category: Editor
-  type: assets
-  description: The package gives you the ability to use Unity Version Control in
-    the Unity editor. To use Unity Version Control, a subscription is required. Learn
-    more about how you can get started for free by visiting https://unity.com/solutions/version-control
-  status: 0
-  errors: []
-  versions:
-    all:
-    - 1.2.3-preview
-    - 1.2.4-preview
-    - 1.2.6
-    - 1.2.7
-    - 1.2.9
-    - 1.2.11
-    - 1.2.15
-    - 1.2.16
-    - 1.2.17-preview.3
-    - 1.3.2
-    - 1.3.3
-    - 1.3.4
-    - 1.3.5
-    - 1.3.6
-    - 1.3.7
-    - 1.3.8
-    - 1.3.9
-    - 1.4.9
-    - 1.5.7
-    - 1.6.0
-    - 1.7.1
-    - 1.8.0
-    - 1.9.0
-    - 1.10.2
-    - 1.11.2
-    - 1.12.5
-    - 1.13.5
-    - 1.14.1
-    - 1.14.4
-    - 1.14.7
-    - 1.14.9
-    - 1.14.12
-    - 1.14.13
-    - 1.14.15
-    - 1.14.16
-    - 1.14.17
-    - 1.14.18
-    - 1.15.1
-    - 1.15.4
-    - 1.15.7
-    - 1.15.9
-    - 1.15.12
-    - 1.15.13
-    - 1.15.15
-    - 1.15.16
-    - 1.15.17
-    - 1.15.18
-    - 1.17.0
-    - 1.17.1
-    - 1.17.2
-    - 1.17.6
-    - 1.17.7
-    - 2.0.0-preview.6
-    - 2.0.0-preview.8
-    - 2.0.0-preview.15
-    - 2.0.0-preview.17
-    - 2.0.0-preview.20
-    - 2.0.0-preview.21
-    - 2.0.0-preview.22
-    - 2.0.0
-    - 2.0.1
-    - 2.0.3
-    - 2.0.4
-    - 2.0.5
-    - 2.0.7
-    - 2.1.0-preview.3
-    - 2.1.0-preview.5
-    - 2.1.0-preview.6
-    - 2.1.0
-    - 2.2.0
-    - 2.3.1
-    compatible:
-    - 2.2.0
-    - 2.3.1
-    recommended: 2.2.0
-    deprecated: []
-  dependencies: []
-  resolvedDependencies: []
-  keywords:
-  - backup
-  - cloud
-  - collab
-  - collaborate
-  - collaboration
-  - control
-  - devops
-  - plastic
-  - plasticscm
-  - source
-  - team
-  - teams
-  - version
-  - vcs
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-  hideInEditor: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 638326189440000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.collab-proxy@2.2/manual/index.html
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/com.unity.cloud.collaborate.git
-    revision: 33c8fba1793946be3c73f738edf70db0b5546afd
-    path: 
-  unityLifecycle:
-    version: 2.2.0
-    nextVersion: 
-    recommendedVersion: 
-    isDeprecated: 0
-    deprecationMessage: 
-  isDeprecated: 0
-  deprecationMessage: 
->>>>>>> Boss
 - packageId: com.unity.feature.2d@2.0.0
   testable: 0
   isDirectDependency: 1
@@ -308,117 +154,9 @@ m_ResolvedPackages:
     email: 
     url: 
   category: 
-<<<<<<< HEAD
   type: asset
   description: Code editor integration for supporting Visual Studio Code as code
     editor for unity. Adds support for generating csproj files for intellisense purposes,
-=======
-  type: assets
-  description: The JetBrains Rider Editor package provides an integration for using
-    the JetBrains Rider IDE as a code editor for Unity. It adds support for generating
-    .csproj files for code completion and auto-discovery of installations.
-  status: 0
-  errors: []
-  versions:
-    all:
-    - 1.0.2
-    - 1.0.6
-    - 1.0.8
-    - 1.1.0
-    - 1.1.1
-    - 1.1.2-preview
-    - 1.1.2-preview.2
-    - 1.1.3-preview.1
-    - 1.1.4-preview
-    - 1.1.4
-    - 1.2.0-preview
-    - 1.2.1
-    - 2.0.0-preview
-    - 2.0.1
-    - 2.0.2
-    - 2.0.3
-    - 2.0.5
-    - 2.0.7
-    - 3.0.1
-    - 3.0.2
-    - 3.0.3
-    - 3.0.4
-    - 3.0.5
-    - 3.0.6
-    - 3.0.7
-    - 3.0.9
-    - 3.0.10
-    - 3.0.12
-    - 3.0.13
-    - 3.0.14
-    - 3.0.15
-    - 3.0.16
-    - 3.0.17
-    - 3.0.18
-    - 3.0.20
-    - 3.0.21
-    - 3.0.22
-    - 3.0.24
-    - 3.0.25
-    - 3.0.26
-    - 3.0.27
-    - 3.0.28
-    compatible:
-    - 3.0.27
-    - 3.0.28
-    recommended: 3.0.28
-    deprecated: []
-  dependencies:
-  - name: com.unity.ext.nunit
-    version: 1.0.6
-  resolvedDependencies:
-  - name: com.unity.ext.nunit
-    version: 1.0.6
-  keywords: []
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-  hideInEditor: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 638373878680000000
-  documentationUrl: https://docs.unity3d.com/Packages/com.unity.ide.rider@3.0/manual/index.html
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/com.unity.ide.rider.git
-    revision: 1d471c19a7f21834ae5b8d0358fd6f9b242c1ee8
-    path: 
-  unityLifecycle:
-    version: 3.0.27
-    nextVersion: 
-    recommendedVersion: 
-    isDeprecated: 0
-    deprecationMessage: 
-  isDeprecated: 0
-  deprecationMessage: 
-- packageId: com.unity.ide.visualstudio@2.0.22
-  testable: 0
-  isDirectDependency: 1
-  version: 2.0.22
-  source: 1
-  resolvedPath: C:\Users\argue\RPG\Library\PackageCache\com.unity.ide.visualstudio@2.0.22
-  assetPath: Packages/com.unity.ide.visualstudio
-  name: com.unity.ide.visualstudio
-  displayName: Visual Studio Editor
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: assets
-  description: Code editor integration for supporting Visual Studio as code editor
-    for unity. Adds support for generating csproj files for intellisense purposes,
->>>>>>> Boss
     auto discovery of installations, etc.
   status: 0
   errors: []
@@ -605,109 +343,7 @@ m_ResolvedPackages:
     revision: 
     path: 
   unityLifecycle:
-<<<<<<< HEAD
     version: 14.0.10
-=======
-    version: 1.0.0
-    nextVersion: 
-    recommendedVersion: 
-    isDeprecated: 0
-    deprecationMessage: 
-  isDeprecated: 0
-  deprecationMessage: 
-- packageId: com.unity.visualscripting@1.9.1
-  testable: 0
-  isDirectDependency: 1
-  version: 1.9.1
-  source: 1
-  resolvedPath: C:\Users\argue\RPG\Library\PackageCache\com.unity.visualscripting@1.9.1
-  assetPath: Packages/com.unity.visualscripting
-  name: com.unity.visualscripting
-  displayName: Visual Scripting
-  author:
-    name: 
-    email: 
-    url: 
-  category: 
-  type: tool
-  description: 'Visual scripting is a workflow that uses visual, node-based graphs
-    to design behaviors rather than write lines of C# script.
-
-
-    Enabling artists,
-    designers and programmers alike, visual scripting can be used to design final
-    logic, quickly create prototypes, iterate on gameplay and create custom nodes
-    to help streamline collaboration.
-
-
-    Visual scripting is compatible with third-party
-    APIs, including most packages, assets and custom libraries.'
-  status: 0
-  errors: []
-  versions:
-    all:
-    - 1.5.0
-    - 1.5.1-pre.3
-    - 1.5.1-pre.5
-    - 1.5.1
-    - 1.5.2
-    - 1.6.0-pre.3
-    - 1.6.0
-    - 1.6.1
-    - 1.7.1
-    - 1.7.2
-    - 1.7.3
-    - 1.7.5
-    - 1.7.6
-    - 1.7.7
-    - 1.7.8
-    - 1.8.0-pre.1
-    - 1.8.0
-    - 1.9.0
-    - 1.9.1
-    - 1.9.2
-    compatible:
-    - 1.9.1
-    - 1.9.2
-    recommended: 1.9.2
-    deprecated:
-    - 1.8.0-pre.1
-  dependencies:
-  - name: com.unity.ugui
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  resolvedDependencies:
-  - name: com.unity.ugui
-    version: 1.0.0
-  - name: com.unity.modules.ui
-    version: 1.0.0
-  - name: com.unity.modules.imgui
-    version: 1.0.0
-  - name: com.unity.modules.jsonserialize
-    version: 1.0.0
-  keywords: []
-  registry:
-    id: main
-    name: 
-    url: https://packages.unity.com
-    scopes: []
-    isDefault: 1
-    capabilities: 7
-    configSource: 0
-  hideInEditor: 1
-  isAssetStorePackage: 0
-  datePublishedTicks: 638284821510000000
-  documentationUrl: 
-  hasRepository: 1
-  repository:
-    type: git
-    url: https://github.cds.internal.unity3d.com/unity/com.unity.visualscripting.git
-    revision: 5e78e9c354ed1567dbcea08e2bd9992e4a473cfb
-    path: 
-  unityLifecycle:
-    version: 1.9.1
->>>>>>> Boss
     nextVersion: 
     recommendedVersion: 
     isDeprecated: 0
@@ -3699,6 +3335,7 @@ m_ResolvedPackages:
     - 9.0.0
     - 9.0.1
     - 9.0.2
+    - 9.0.3
     compatible:
     - 8.0.4
     recommended: 8.0.4
@@ -3930,6 +3567,7 @@ m_ResolvedPackages:
     - 10.0.1
     - 10.0.2
     - 10.0.3
+    - 10.0.4
     compatible:
     - 9.0.2
     recommended: 9.0.2
@@ -4226,11 +3864,13 @@ m_ResolvedPackages:
     - 1.1.0
     - 1.1.1
     - 1.1.2
+    - 1.1.3
     compatible:
     - 1.1.0
     - 1.1.1
     - 1.1.2
-    recommended: 1.1.2
+    - 1.1.3
+    recommended: 1.1.3
     deprecated: []
   dependencies:
   - name: com.unity.2d.sprite
@@ -4793,7 +4433,6 @@ m_ResolvedPackages:
     - 1.4.2
     - 1.4.3
     - 1.4.4
-<<<<<<< HEAD
     - 2.0.1-exp.1
     - 2.0.1-exp.2
     - 2.0.1-pre.12
@@ -4819,59 +4458,6 @@ m_ResolvedPackages:
     - 2.0.1-pre.12
     - 2.0.1-pre.18
     recommended: 1.1.33
-=======
-    - 1.4.5
-    - 1.4.6
-    - 1.4.7
-    - 1.4.8
-    - 1.4.9
-    - 1.4.11
-    - 1.5.0-pre.3
-    - 1.5.0-pre.4
-    - 1.5.0-pre.5
-    - 1.5.0
-    - 1.5.1
-    - 1.5.2
-    - 1.5.3
-    - 1.5.4
-    - 1.5.5
-    - 1.5.6-preview.1
-    - 1.5.6
-    - 1.6.0-pre.2
-    - 1.6.0-pre.3
-    - 1.6.0-pre.4
-    - 1.6.0
-    - 1.6.1
-    - 1.6.2
-    - 1.6.3
-    - 1.6.4
-    - 1.6.5
-    - 1.6.6
-    - 1.7.0-pre.1
-    - 1.7.0
-    - 1.7.1
-    - 1.7.2
-    - 1.7.3
-    - 1.7.4
-    - 1.8.0-pre.1
-    - 1.8.0-pre.2
-    - 1.8.0
-    - 1.8.1
-    - 1.8.2
-    - 1.8.3
-    - 1.8.4
-    - 1.8.7
-    - 1.8.8
-    - 1.8.9
-    - 1.8.10
-    - 1.8.11
-    - 1.8.12
-    - 1.8.13
-    compatible:
-    - 1.8.12
-    - 1.8.13
-    recommended: 1.8.13
->>>>>>> Boss
     deprecated: []
   dependencies:
   - name: com.unity.ext.nunit

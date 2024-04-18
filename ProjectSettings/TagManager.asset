@@ -4,18 +4,11 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - HealingPotion
+  - Tobor
   - Enemy
-<<<<<<< HEAD
+  - HealingPotion
   - Wall
   - EndTile
-<<<<<<< HEAD
-=======
-  - Tobor
->>>>>>> Boss
-=======
-  - Settings
->>>>>>> 8ca897fa8a782af41612b979c1df2d883aa16897
   layers:
   - Default
   - TransparentFX
@@ -23,24 +16,12 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< HEAD
   - 
   - Entity
   - 
   - 
   - Map
-<<<<<<< HEAD
-=======
-  - Player
-  - Enemy
-  - Laser
-  - Tobor
   - 
->>>>>>> Boss
-  - 
-=======
-  - HP Bars
->>>>>>> 8ca897fa8a782af41612b979c1df2d883aa16897
   - 
   - 
   - 
@@ -64,13 +45,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 3848721323
-    locked: 0
-  - name: Stars
-    uniqueID: 3491898683
-    locked: 0
-  - name: Player
-    uniqueID: 3107026039
     locked: 0

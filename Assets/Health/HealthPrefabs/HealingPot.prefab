@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1981923512956022016}
   - component: {fileID: 5521695333099329763}
   - component: {fileID: 2148500020819936349}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealingPot
   m_TagString: HealingPotion
   m_Icon: {fileID: 0}
