@@ -6,17 +6,35 @@ using UnityEngine.Audio;
 
 public class SettingsManager : MonoBehaviour
 {
-    public AudioMixer audioMixer;
-    Resolution[] resolutions;
-    public Dropdown resolutionDropdown;
+    //[SerializeField] private SettingsStorage settingsStorage; 
+    //[SerializeField] private AudioMixer audioMixer;
+    private Resolution[] resolutions;
+    [SerializeField] private Dropdown resolutionDropdown;
 
-    void Start () {
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Toggle fullscreenToggle;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        //settingsStorage = FindAnyObjectByType<SettingsStorage>();
+        if (SettingsStorage.Instance != null) {
+            SetResolutionSettings(SettingsStorage.Instance.GetResolution().width, SettingsStorage.Instance.GetResolution().height, SettingsStorage.Instance.GetFullscreen());
+            SettingsStorage.Instance.SetAllSettings();
+            musicSlider.value = SettingsStorage.Instance.GetMusicVolume();
+            fullscreenToggle.isOn = SettingsStorage.Instance.GetFullscreen();
+        } else 
+        {Debug.Log("No instance of SettingsStorage");}  
+            
+    }
+
+    private void SetResolutionSettings (int width, int height, bool isFullscreen) {
         resolutions = Screen.resolutions;
 
         resolutionDropdown.ClearOptions(); //clear dropdown options
 
         int currentResolutionIndex = 0;
-        Screen.SetResolution(1920, 1080, Screen.fullScreen);
+        Screen.SetResolution(width, height, isFullscreen);
 
         //convert resolutions to string array
         List<string> options = new List<string>();
@@ -36,19 +54,17 @@ public class SettingsManager : MonoBehaviour
     }
 
     public void SetMusicVolume (float volume) {
-        audioMixer.SetFloat("Volume", volume);
-    }
-    public void SetSoundVolume (float volume) {
-        
+        if (SettingsStorage.Instance != null) 
+            SettingsStorage.Instance.SetMusicVolume(volume);
     }
 
     public void SetResolution(int resolutionIndex) {
-        Resolution res = resolutions[resolutionIndex];
-        Screen.SetResolution(res.width, res.height, Screen.fullScreen);
+        if (SettingsStorage.Instance != null)
+            SettingsStorage.Instance.SetResolution(resolutions[resolutionIndex]);
     }
 
     public void SetFullscreen(bool flag) {
-        Screen.fullScreen = flag;
+        if (SettingsStorage.Instance != null)
+            SettingsStorage.Instance.SetFullscreen(flag);
     }
-
 }

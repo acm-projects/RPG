@@ -40,14 +40,13 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\playerTemp\TEMP_playerprojectilescript.cs" />
      <Compile Include="Assets\Scripts\ProcedualGenerationAlgorithms.cs" />
      <Compile Include="Assets\Skills\SkillScripts\abilityCooldown.cs" />
      <Compile Include="Assets\General Scripts\IDamageable.cs" />
      <Compile Include="Assets\Scripts\WallTypesHelper.cs" />
+     <Compile Include="Assets\Player\TEMP_playerprojectilescript.cs" />
      <Compile Include="Assets\Scripts\ProGen\TilemapVisualizer.cs" />
      <Compile Include="Assets\Scripts\RunTest.cs" />
-     <Compile Include="Assets\playerTemp\TEMP_PlayerAttackScript.cs" />
      <Compile Include="Assets\Menus\GameStateManager.cs" />
      <Compile Include="Assets\Scripts\CorridorFirstDungeonGen.cs" />
      <Compile Include="Assets\Menus\Help\Skill Info\PopupScript.cs" />
@@ -60,24 +59,27 @@
      <Compile Include="Assets\Scripts\ProGen\RoomFirstDungeonGen.cs" />
      <Compile Include="Assets\Scripts\Minimap\MinimapGame.cs" />
      <Compile Include="Assets\Enemies\old scripts\EnemyMeleeScript.cs" />
+     <Compile Include="Assets\Player\TEMP_PlayerAttackScript.cs" />
      <Compile Include="Assets\Enemies\EnemyAbstract.cs" />
      <Compile Include="Assets\Scripts\LevelType.cs" />
      <Compile Include="Assets\Scripts\WallGen.cs" />
      <Compile Include="Assets\Scripts\Data\SimpleRandomWalkSO.cs" />
-     <Compile Include="Assets\General Scripts\GameLogicScript.cs" />
      <Compile Include="Assets\Enemies\Enemy Script Types\RangedEnemy.cs" />
      <Compile Include="Assets\Enemies\Enemy Script Types\RandomMeleeEnemy.cs" />
      <Compile Include="Assets\Scripts\Minimap\MinimapWindow.cs" />
      <Compile Include="Assets\Menus\gameOver\gameOverScreen.cs" />
-     <Compile Include="Assets\TransitionScript.cs" />
-     <Compile Include="Assets\playerTemp\PlayerHealth.cs" />
-     <Compile Include="Assets\playerTemp\playerTempScript.cs" />
      <Compile Include="Assets\Enemies\Enemy Script Types\MeleeEnemy.cs" />
-     <Compile Include="Assets\playerTemp\PlayerMovement.cs" />
+     <Compile Include="Assets\Menus\Settings\SettingsStorage.cs" />
+     <Compile Include="Assets\Menus\Transitions\TransitionScript.cs" />
+     <Compile Include="Assets\Player\PlayerHealthManager.cs" />
      <Compile Include="Assets\Enemies\Enemy Script Types\RandomRangeEnemy.cs" />
+     <Compile Include="Assets\GameLevels\PortalScript.cs" />
      <Compile Include="Assets\Enemies\EnemyProjectileMovementScript.cs" />
      <Compile Include="Assets\Enemies\old scripts\DefaultEnemyScript.cs" />
      <Compile Include="Assets\Enemies\Enemy Script Types\RandomEnemyScript.cs" />
+     <Compile Include="Assets\Player\PlayerHealth.cs" />
+     <Compile Include="Assets\GameLevels\GameLogicScript.cs" />
+     <Compile Include="Assets\Player\PlayerMovement.cs" />
      <Compile Include="Assets\Health\HealthScripts\HealthBar.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
@@ -720,134 +722,176 @@
     <Reference Include="System.Xml.Serialization">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.19f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Runtime">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Runtime">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="PsdPlugin">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\PsdPlugin.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Burst">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Path.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.ShaderGraph.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.ShaderGraph.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Runtime">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Animation.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Aseprite.Common">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Aseprite.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Config.Runtime">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Config.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.005">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.005.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.RenderPipelines.Core.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEngineBridge.001">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.InternalAPIEngineBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Runtime">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Collections">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
-    </Reference>
-    <Reference Include="PPv2URPConverters">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\PPv2URPConverters.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Searcher.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.Searcher.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Aseprite.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VSCode.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.VSCode.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.SpriteShape.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Tilemap.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Tilemap.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.RenderPipelines.Universal.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.RenderPipelines.Universal.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.IK.Editor">
-        <HintPath>C:\Users\zestyxace\RPG\Library\ScriptAssemblies\Unity.2D.IK.Editor.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj">
+      <Project>{d4b8372e-d2a3-8a4f-2a40-35f087e1e186}</Project>
+      <Name>Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.IK.Runtime.csproj">
+      <Project>{85dc100a-7e22-6665-3f2c-2cefea5163ca}</Project>
+      <Name>Unity.2D.IK.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj">
+      <Project>{b361293c-65b4-55a1-8a07-1a5cf58c9bb4}</Project>
+      <Name>Unity.RenderPipelines.Core.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="PsdPlugin.csproj">
+      <Project>{a2d66cc2-a73f-e0f5-f565-47b3fc66d0f6}</Project>
+      <Name>PsdPlugin</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.csproj">
+      <Project>{ca326eeb-ed3f-8f0a-b6a6-5575b4163345}</Project>
+      <Name>Unity.RenderPipelines.Universal.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.Editor.csproj">
+      <Project>{a0e427aa-48ca-3846-6ba5-82ce170a8040}</Project>
+      <Name>Unity.Burst.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Burst.csproj">
+      <Project>{0a18a58c-7584-f9b5-42dc-572521a6576d}</Project>
+      <Name>Unity.Burst</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Path.Editor.csproj">
+      <Project>{c198794f-d451-e8b2-0d54-55eb7d32609a}</Project>
+      <Name>Unity.2D.Common.Path.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.ShaderGraph.Editor.csproj">
+      <Project>{7d0aa9bf-2ba5-82be-f5c2-3dce7d4334b7}</Project>
+      <Name>Unity.ShaderGraph.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{bc6c4d72-1e4b-87da-4596-cee4cad2eb8c}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Animation.Runtime.csproj">
+      <Project>{c0c45929-b831-2dfa-b827-ad099253e069}</Project>
+      <Name>Unity.2D.Animation.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.csproj">
+      <Project>{c36c08e4-31ae-8b22-b5e3-dc9fb1d65ef8}</Project>
+      <Name>Unity.2D.Tilemap.Extras</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{589b10fa-b94e-5135-90e0-0e46591ce41b}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.PixelPerfect.Editor.csproj">
+      <Project>{92bab2e0-3b0c-56e5-fe3d-a91d2e992a02}</Project>
+      <Name>Unity.2D.PixelPerfect.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Aseprite.Common.csproj">
+      <Project>{e66f0709-8432-30a8-deec-61538292dfbb}</Project>
+      <Name>Unity.2D.Aseprite.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{37a93c62-00a8-d51c-d4b8-9cee85e6e06f}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Config.Runtime.csproj">
+      <Project>{67fe81ed-d79f-d238-77e2-3d096469e2ad}</Project>
+      <Name>Unity.RenderPipelines.Universal.Config.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEditorBridge.005.csproj">
+      <Project>{f530529b-0ee3-b36b-c2d7-24be856c2c8b}</Project>
+      <Name>Unity.InternalAPIEditorBridge.005</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj">
+      <Project>{b5c5eadf-2d7c-6ab4-942f-9885e0e3531a}</Project>
+      <Name>Unity.RenderPipelines.Core.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEngineBridge.001.csproj">
+      <Project>{f08dd5ce-7909-7ffc-ce36-0dbef63bed03}</Project>
+      <Name>Unity.InternalAPIEngineBridge.001</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.Editor.csproj">
+      <Project>{32c6b482-3272-6b73-1adb-87ba62f41d39}</Project>
+      <Name>Unity.Mathematics.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Runtime.csproj">
+      <Project>{2c08e98f-b6bb-ca04-382b-e4f12583f83e}</Project>
+      <Name>Unity.2D.Common.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.csproj">
+      <Project>{ae81f303-af42-4a63-92cb-308b02bea8ec}</Project>
+      <Name>Unity.RenderPipeline.Universal.ShaderLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Extras.Editor.csproj">
+      <Project>{41d7a6d2-bcbe-d0e5-0d0b-05172f8d9189}</Project>
+      <Name>Unity.2D.Tilemap.Extras.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj">
+      <Project>{a45a09c6-d405-1403-7d89-94fbdd8ec417}</Project>
+      <Name>Unity.RenderPipelines.Core.ShaderLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Collections.csproj">
+      <Project>{f8620dd5-d0f3-6f99-1364-ba7bf12374a1}</Project>
+      <Name>Unity.Collections</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Psdimporter.Editor.csproj">
+      <Project>{ad1626af-4039-6298-43ad-4b7fe8e43c1f}</Project>
+      <Name>Unity.2D.Psdimporter.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.InternalAPIEditorBridge.001.csproj">
+      <Project>{f320f1c2-a239-26e1-24be-94f8b61747c7}</Project>
+      <Name>Unity.InternalAPIEditorBridge.001</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.SpriteShape.Runtime.csproj">
+      <Project>{217c1d6f-b0e9-bfb2-b6f2-26a505ce0e95}</Project>
+      <Name>Unity.2D.SpriteShape.Runtime</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.PixelPerfect.csproj">
+      <Project>{8a5e494b-2f51-d643-cc90-443b6328b53c}</Project>
+      <Name>Unity.2D.PixelPerfect</Name>
+    </ProjectReference>
+    <ProjectReference Include="PPv2URPConverters.csproj">
+      <Project>{d7d99137-6494-0dc3-db48-2f2aa39c6c23}</Project>
+      <Name>PPv2URPConverters</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Mathematics.csproj">
+      <Project>{f51ae3c8-c5f6-c613-a76b-a107efe9bf07}</Project>
+      <Name>Unity.Mathematics</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Common.Editor.csproj">
+      <Project>{083a3be2-b2e6-e67f-b882-c27991f75f6d}</Project>
+      <Name>Unity.2D.Common.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.csproj">
+      <Project>{ee25a9f3-5a4f-a671-4632-0f45ebc64e47}</Project>
+      <Name>Unity.RenderPipelines.Universal.Shaders</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Searcher.Editor.csproj">
+      <Project>{f4cf0162-f39a-a8ef-b372-6fe6c26243dc}</Project>
+      <Name>Unity.Searcher.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Aseprite.Editor.csproj">
+      <Project>{399c16ba-cb61-8ba0-4283-b7639c908334}</Project>
+      <Name>Unity.2D.Aseprite.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.VSCode.Editor.csproj">
+      <Project>{5878e799-2e2a-11a5-9707-23b1e95e7769}</Project>
+      <Name>Unity.VSCode.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.SpriteShape.Editor.csproj">
+      <Project>{ecd188b5-f47e-20b3-5a76-21214db13413}</Project>
+      <Name>Unity.2D.SpriteShape.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Tilemap.Editor.csproj">
+      <Project>{758c05b4-b0ac-44dc-3fbd-1224e6eba9cf}</Project>
+      <Name>Unity.2D.Tilemap.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Animation.Editor.csproj">
+      <Project>{7d04b922-1cd7-d638-11d4-31214677d9f6}</Project>
+      <Name>Unity.2D.Animation.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj">
+      <Project>{dc7229ec-5886-3084-3b8a-8890e0d54c15}</Project>
+      <Name>Unity.RenderPipelines.Universal.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.IK.Editor.csproj">
+      <Project>{316e8d38-dc14-c744-5635-e7ce6bc47afd}</Project>
+      <Name>Unity.2D.IK.Editor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

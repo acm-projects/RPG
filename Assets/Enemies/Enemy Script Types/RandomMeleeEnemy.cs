@@ -5,7 +5,7 @@ using UnityEngine;
 public class RandomMeleeEnemy : EnemyAbstract
 {   
     //melee attacks
-    public Collider2D attackPoint; 
+    [SerializeField] private Collider2D attackPoint; 
 
     // Start is called before the first frame update
     void Start()

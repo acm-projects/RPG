@@ -5,24 +5,25 @@ using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
-    public static bool gameIsPaused = false;
-    public GameObject pauseMenuUI;
-    public GameObject settingsMenuUI;
-    public GameObject helpMenuUI;
-    public GameObject playerHPBar;
-    public GameObject skillsUI;
-    public GameObject gameOverUI;
-    public GameObject pauseButton;
+    [SerializeField] private int gameLevel;
+    [SerializeField] private static bool gameIsPaused = false;
+    [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject settingsMenuUI;
+    [SerializeField] private GameObject helpMenuUI;
+    [SerializeField] private GameObject playerHPBar;
+    [SerializeField] private GameObject skillsUI;
+    [SerializeField] private GameObject gameOverUI;
+    [SerializeField] private GameObject pauseButton;
 
-    public GameObject[] skillInfoMenus;
+    [SerializeField] private GameObject[] skillInfoMenus;
 
-    public GameObject levelTransition;
-
-
+    [SerializeField] private GameObject levelTransition;
     
     void Start () {
-        Time.timeScale = 1;
+        Time.timeScale = 1; //starts time
+        GameLogicScript.setGameLevel(gameLevel);
 
+        //Activates and deactivates screen items
         gameOverUI.SetActive(false);
         MenuItems(false);
         GameItems(true);
@@ -64,17 +65,19 @@ public class GameStateManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    //Changes level (scene) to given level
     public void changeLevel (int level) {
-        
         SceneManager.LoadScene(level);
     }
 
-    public void nextLevel() {
+    //Changes level (scene) to next scene in build settings, triggers transition animation
+    public void nextLevelWithTransition() {
         levelTransition.SetActive(true);
         levelTransition.GetComponent<Animator>().SetTrigger("LevelTransition");
     }
 
-    public void goToNextLevel () {
+    //Changes level (scene) to next scene in build settings, NO transition animation
+    public void nextLevel () {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1); //gets next active scene
     }
 
@@ -90,12 +93,14 @@ public class GameStateManager : MonoBehaviour
 
     // Resets current level
     public void RestartScene() {
+        GameLogicScript.resetLevels(); 
         gameIsPaused = false;
         Time.timeScale = 1;
+        PlayerHealthManager.currentPlayerHealth = PlayerHealthManager.currentResetHealth; //resets hp to value at start of level
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    // Opens skill information popup
+    // Opens skill information popup based on given skill index
     public void OpenSkillInfo (int skill) {
         skillInfoMenus[skill].SetActive(true);
     }

@@ -5,8 +5,8 @@ using UnityEngine;
 public class RandomRangeEnemy : EnemyAbstract
 {   
     //melee attacks
-    public GameObject projectile;
-    public Transform projectilePos;
+    [SerializeField] private GameObject projectile;
+    [SerializeField] private Transform projectilePos;
 
 
     // Start is called before the first frame update

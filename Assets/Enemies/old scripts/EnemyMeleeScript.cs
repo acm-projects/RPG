@@ -77,7 +77,7 @@ public class EnemyMeleeScript : MonoBehaviour
         animator.SetTrigger("isAttacking");
 
         if (attackPoint.IsTouching(player.GetComponent<Collider2D>())) { //if attack hits player
-            StartCoroutine(player.GetComponent<playerTempScript>().takeDamage(attackDamage, direction.normalized * knockbackForce, knockbackTime));
+            StartCoroutine(player.GetComponent<PlayerMovement>().KnockbackDamage(attackDamage, direction.normalized * knockbackForce, knockbackTime));
         }
     }
 }

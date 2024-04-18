@@ -9,9 +9,13 @@ TagManager:
 <<<<<<< HEAD
   - Wall
   - EndTile
+<<<<<<< HEAD
 =======
   - Tobor
 >>>>>>> Boss
+=======
+  - Settings
+>>>>>>> 8ca897fa8a782af41612b979c1df2d883aa16897
   layers:
   - Default
   - TransparentFX
@@ -25,6 +29,7 @@ TagManager:
   - 
   - 
   - Map
+<<<<<<< HEAD
 =======
   - Player
   - Enemy
@@ -33,6 +38,9 @@ TagManager:
   - 
 >>>>>>> Boss
   - 
+=======
+  - HP Bars
+>>>>>>> 8ca897fa8a782af41612b979c1df2d883aa16897
   - 
   - 
   - 
