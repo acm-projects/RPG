@@ -13,13 +13,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Enemy
   - Entity
-  - 
-  - 
+  - Laser
+  - Tobor
   - Map
   - 
   - 
@@ -45,4 +45,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3624408537
+    locked: 0
+  - name: Stars
+    uniqueID: 2065917793
+    locked: 0
+  - name: Player
+    uniqueID: 2022712793
     locked: 0
