@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToborHealth : MonoBehaviour
+public class ToborHealth : MonoBehaviour, IDamageable
 {
     public int maxHealth = 100;
     public int currentHealth;
@@ -30,6 +30,9 @@ public class ToborHealth : MonoBehaviour
             healthBar.SetHealth(currentHealth);
         }
     }
+
+    public int Health { get { return currentHealth; } set {currentHealth = value; }}
+
 
     void Die() {
         Animator animator = GetComponent<Animator>();

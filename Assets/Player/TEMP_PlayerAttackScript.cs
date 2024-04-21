@@ -45,12 +45,12 @@ public class TEMP_PlayerAttackScript : MonoBehaviour
      public List<GameObject> GetColliders () { return allEnemiesInRange; }
  
      void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Tobor"))
             allEnemiesInRange.Add(other.gameObject); 
      }
  
      void OnTriggerExit2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Enemy") || other.gameObject.CompareTag("Tobor"))
             allEnemiesInRange.Remove(other.gameObject);
      }
 }

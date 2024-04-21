@@ -51,6 +51,7 @@ public class GameStateManager : MonoBehaviour
 
     //Resumes game
     public void Resume() {
+        Debug.Log("RESUME GAME");
         MenuItems(false);
         GameItems(true);
 

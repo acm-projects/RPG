@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BossHealth : MonoBehaviour
+public class BossHealth : MonoBehaviour, IDamageable
 {
     public int maxHealth = 1000;
     public int currentHealth;
@@ -35,4 +35,6 @@ public class BossHealth : MonoBehaviour
     void Die() {
         Destroy(gameObject, 1.3f);
     }
+
+    public int Health { get { return currentHealth; } set {currentHealth = value; }}
 }

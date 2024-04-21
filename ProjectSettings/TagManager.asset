@@ -9,6 +9,7 @@ TagManager:
   - HealingPotion
   - Wall
   - EndTile
+  - Comet
   layers:
   - Default
   - TransparentFX
@@ -21,12 +22,12 @@ TagManager:
   - Laser
   - Tobor
   - Map
+  - Asteroid
   - 
   - 
   - 
   - 
-  - 
-  - 
+  - Menus
   - 
   - 
   - 

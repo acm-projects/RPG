@@ -8,16 +8,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartMenu.unity
     guid: f7ac5a97fc165e747b92f768f92e8719
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Test-Aendri.unity
     guid: 91baddfa7a09da84ebb3f0147d8de734
-  - enabled: 0
-    path: Assets/Scenes/EnemyTestScene.unity
-    guid: bab5b1a4436afea47b2c8946bb94216d
   - enabled: 1
-    path: Assets/Scenes/CombinedTest.unity
-    guid: 66c51b59131f0c0448705b70f5a20024
+    path: Assets/Scenes/LevelOne.unity
+    guid: f7c78ee7edb1b084897cf6c873edc7b8
   - enabled: 1
-    path: Assets/Scenes/Level One.unity
-    guid: fbf46ce4400c61a41a057992bd5a9d68
+    path: Assets/Scenes/LevelTwo.unity
+    guid: a95a56d62fa1aa040aec841db2715540
+  - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: bcaf3ef4dd853b740aab62fa293526ea
+  - enabled: 1
+    path: Assets/Scenes/Boss.unity
+    guid: e9fea4291f8a8b1488dfebd5e7932ff5
   m_configObjects: {}

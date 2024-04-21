@@ -7,6 +7,7 @@ public class PortalScript : MonoBehaviour
     public int currentEnemyCount;
     public GameObject gameStateCanvas;
     private GameStateManager gameStateManager;
+    [SerializeField] private bool portalOverride = true;
 
     void Start(){
         gameStateManager = gameStateCanvas.GetComponent<GameStateManager>();
@@ -22,6 +23,8 @@ public class PortalScript : MonoBehaviour
 
     //If all enemies are dead, can transition to next level
     public bool canEnterNextLevel() {
+        if (portalOverride)
+            return true;
         return (currentEnemyCount <= 0);
     }
 

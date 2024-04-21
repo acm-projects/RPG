@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HandHealth : MonoBehaviour
+public class HandHealth : MonoBehaviour, IDamageable
 {
     public int maxHealth = 100;
     public int currentHealth;
@@ -34,4 +34,6 @@ public class HandHealth : MonoBehaviour
     void Die() {
         Destroy(gameObject, 1.3f);
     }
+
+    public int Health { get { return currentHealth; } set {currentHealth = value; }}
 }
