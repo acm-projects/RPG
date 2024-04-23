@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 881984878938656862}
   - component: {fileID: 8794732190788401328}
   - component: {fileID: -3018492075276467461}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LittleBat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8712117432189970481}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ProjectilePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -251,9 +251,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyHealth
       objectReference: {fileID: 0}
+    - target: {fileID: 568379461763842931, guid: 8c7b16b3e3ab5e246a705da788a51aa8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1233477797454314638, guid: 8c7b16b3e3ab5e246a705da788a51aa8, type: 3}
       propertyPath: m_SortingOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1383814628833824795, guid: 8c7b16b3e3ab5e246a705da788a51aa8, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416439747225405794, guid: 8c7b16b3e3ab5e246a705da788a51aa8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4576546008379907367, guid: 8c7b16b3e3ab5e246a705da788a51aa8, type: 3}
       propertyPath: m_AnchorMax.x
@@ -262,6 +274,10 @@ PrefabInstance:
     - target: {fileID: 4576546008379907367, guid: 8c7b16b3e3ab5e246a705da788a51aa8, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6256388106242031796, guid: 8c7b16b3e3ab5e246a705da788a51aa8, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6576823574196675960, guid: 8c7b16b3e3ab5e246a705da788a51aa8, type: 3}
       propertyPath: m_LocalPosition.z

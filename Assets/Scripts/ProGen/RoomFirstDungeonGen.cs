@@ -31,7 +31,7 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
     private LevelType levelType = LevelType.Underground;
 
     GameObject[] enemyArr;
-    List<Vector2Int> enemyPos;
+    List<Vector2Int> enemyPos, wallPos;
     void Start()
     {
         enemyArr = new GameObject[] { enemy1, enemy2, enemy3, enemy4, enemy5 };
@@ -44,8 +44,16 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
             // Convert Vector2Int to Vector3
             Vector3 spawnPosition = new Vector3(enemyPos[i].x, enemyPos[i].y, 0);
 
-            // Spawn the enemy at the position
-            Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
+            if (wallPos.Contains(enemyPos[i]))
+            {
+                Debug.Log("Enemy spawned on wall");
+                continue;
+            }
+            else
+            {
+                // Spawn the enemy at the position
+                Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
+            }
         }
 
         playerObj.transform.position = new Vector3(startPos.x, startPos.y, 0);
@@ -99,7 +107,7 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
         if (bigEnemy != null)
             levelType = LevelType.Overworld;
 
-        WallGen.CreateWalls(floor, tilemapVisualizer, levelType);
+        wallPos = WallGen.CreateWalls(floor, tilemapVisualizer, levelType);
 
         //startSquare.transform.position = new Vector3(startPos.x, startPos.y, 10);
         //playerObj.transform.position = new Vector3(startPos.x, startPos.y, 0);

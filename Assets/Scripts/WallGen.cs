@@ -5,12 +5,16 @@ using UnityEngine;
 
 public class WallGen
 {
-    public static void CreateWalls(HashSet<Vector2Int> floorPositions, TilemapVisualizer tilemapVisualizer, LevelType levelType)
+    public static List<Vector2Int> CreateWalls(HashSet<Vector2Int> floorPositions, TilemapVisualizer tilemapVisualizer, LevelType levelType)
     {
         var basicWallPositions = FindWallsInDirections(floorPositions, Direction2D.cardinalDirectionsList);
         var cornerWallPositions = FindWallsInDirections(floorPositions, Direction2D.diagonalDirectionsList);
         List<Vector2Int> wallTopPos = CreateBasicWall(tilemapVisualizer, basicWallPositions, floorPositions);
         List<Vector2Int> wallLeft = CreateCornerWalls(tilemapVisualizer, cornerWallPositions, floorPositions);
+
+        List<Vector2Int> allWallPositions = new List<Vector2Int>();
+        allWallPositions.AddRange(basicWallPositions);
+        allWallPositions.AddRange(cornerWallPositions);
 
         Debug.Log(levelType);
 
@@ -28,6 +32,7 @@ public class WallGen
                 tilemapVisualizer.fixWallTop(wallPosition);
             }
         }
+        return allWallPositions;
     }
 
     private static List<Vector2Int> CreateCornerWalls(TilemapVisualizer tilemapVisualizer, HashSet<Vector2Int> cornerWallPositions, HashSet<Vector2Int> floorPositions)
