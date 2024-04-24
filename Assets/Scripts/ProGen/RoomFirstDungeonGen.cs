@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
 {
@@ -32,36 +33,46 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
 
     GameObject[] enemyArr;
     List<Vector2Int> enemyPos, wallPos;
+
+    private bool RunStart = false; 
+
     void Start()
     {
-        enemyArr = new GameObject[] { enemy1, enemy2, enemy3, enemy4, enemy5 };
-
-        for (int i = 0; i < enemyPos.Count; i++)
-        {
-            // Select a random enemy from enemyArr
-            GameObject enemyToSpawn = enemyArr[Random.Range(0, enemyArr.Length)];
-
-            // Convert Vector2Int to Vector3
-            Vector3 spawnPosition = new Vector3(enemyPos[i].x, enemyPos[i].y, 0);
-
-            if (wallPos.Contains(enemyPos[i]))
-            {
-                Debug.Log("Enemy spawned on wall");
-                continue;
-            }
-            else
-            {
-                // Spawn the enemy at the position
-                Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
-            }
-        }
-
-        playerObj.transform.position = new Vector3(startPos.x, startPos.y, 0);
-        Instantiate(bigEnemy, new Vector3(endPos.x, endPos.y, 0), Quaternion.identity);
-
-        Debug.Log("Room First Dungeon Generation");
+       
     }
 
+    void Update ()
+    {if (RunStart)
+        {
+            enemyArr = new GameObject[] { enemy1, enemy2, enemy3, enemy4, enemy5 };
+            Debug.Log(enemyPos.Count);
+
+            for (int i = 0; i < enemyPos.Count; i++)
+            {
+                //Select a random enemy from enemyArr
+                GameObject enemyToSpawn = enemyArr[Random.Range(0, enemyArr.Length)];
+
+                // Convert Vector2Int to Vector3
+                Vector3 spawnPosition = new Vector3(enemyPos[i].x, enemyPos[i].y, 0);
+
+                if (wallPos.Contains(enemyPos[i]))
+                {
+                    Debug.Log("Enemy spawned on wall");
+                    continue;
+                }
+                else
+                {
+                    // Spawn the enemy at the position
+                    Instantiate(enemyToSpawn, spawnPosition, Quaternion.identity);
+                }
+            }
+
+            playerObj.transform.position = new Vector3(startPos.x, startPos.y, 0);
+            Instantiate(bigEnemy, new Vector3(endPos.x, endPos.y, 0), Quaternion.identity);
+            RunStart = false;
+        }
+       
+    }
     public void RunGeneration()
     {
         RunProceduralGeneration();
@@ -102,7 +113,7 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
         HashSet<Vector2Int> corridors = ConnectRooms(roomCenters);
         floor.UnionWith(corridors);
         enemyPos = tilemapVisualizer.PaintFloorTiles(floor);
-        Debug.Log(enemyPos.Count);
+        Debug.Log("Enemy Pos: "+enemyPos.Count);
 
         if (bigEnemy != null)
             levelType = LevelType.Overworld;
@@ -112,6 +123,7 @@ public class RoomFirstDungeonGen : SimpleRandomWalkDungeonGen
         //startSquare.transform.position = new Vector3(startPos.x, startPos.y, 10);
         //playerObj.transform.position = new Vector3(startPos.x, startPos.y, 0);
         endSquare.transform.position = new Vector3(endPos.x, endPos.y, 0);
+        RunStart = true; 
     }
 
     private HashSet<Vector2Int> CreateRoomsRandomly(List<BoundsInt> roomsList)
