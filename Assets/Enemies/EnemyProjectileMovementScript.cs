@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyProjectileMovementScript : MonoBehaviour
 {
+
     private GameObject player;
     private Rigidbody2D rb;
     public float projectileSpeed = 20;
@@ -15,6 +16,7 @@ public class EnemyProjectileMovementScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.GetComponent<SpriteRenderer>().sortingOrder = 1;
         rb = GetComponent<Rigidbody2D>();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -30,16 +32,26 @@ public class EnemyProjectileMovementScript : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if (timer > timeProjectileFlies) {
+        if (timer > timeProjectileFlies)
+        {
             Destroy(gameObject);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
-        if (other.gameObject.CompareTag("Player")) { //if hit player
+    //hits object
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        { //if hit player
+           if (!other.GetComponent<PlayerMovement>().IsShielded()) // Add this condition
+            {
+                Destroy(gameObject);
+                other.GetComponent<PlayerHealth>().TakeDamage(projectileDamage);
+            }
+        }
+        else if (other.gameObject.CompareTag("Wall"))
+        { //if hit wall
             Destroy(gameObject);
-            other.GetComponent<playerTempScript>().takeDamage(projectileDamage);
-        } 
-
+        }
     }
 }

@@ -6,6 +6,21 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Health Bar.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/StartMenu.unity
+    guid: f7ac5a97fc165e747b92f768f92e8719
+  - enabled: 0
+    path: Assets/Scenes/Test-Aendri.unity
+    guid: 91baddfa7a09da84ebb3f0147d8de734
+  - enabled: 1
+    path: Assets/Scenes/LevelOne.unity
+    guid: f7c78ee7edb1b084897cf6c873edc7b8
+  - enabled: 1
+    path: Assets/Scenes/LevelTwo.unity
+    guid: a95a56d62fa1aa040aec841db2715540
+  - enabled: 1
+    path: Assets/Scenes/LevelThree.unity
+    guid: bcaf3ef4dd853b740aab62fa293526ea
+  - enabled: 1
+    path: Assets/Scenes/Boss.unity
+    guid: e9fea4291f8a8b1488dfebd5e7932ff5
   m_configObjects: {}
